@@ -1,0 +1,8 @@
+<html>
+	<head>
+		<link href="cafe_logo.png" rel="icon">
+		<title> Mishra's Cafeteria </title>	
+	</head>
+	<body>
+	</body>
+</html>
