@@ -3,50 +3,40 @@
 	<head>
 		<title> Form Validation </title>
 	</head>
+		<style>
+				.box{
+					width:50%;
+					height:300px;
+					background-color:#bdf0ec ;
+					float:center;}
+					
+				p{
+				text align:center;
+				color:black;
+				font-weight:bolder;}
+				
+		</style>
+	
+	
 	<body>
-		<fieldset>
-			<style>
-			.test1{color:red;background-color:yellow;}
-			<form method="post">
-				Name : <input type="text" name="Name" required maxlength="15" pattern="[A-Z a-z]+title="text"><br><br>
-				Mobile No : <input type="number" name="phone" required minlength="10" maxlength="10"><br><br>
-				Upload File/ Image : <input type="file" name="file" multiple><br><br>
-				Email Id : <input type="email" name="email" placeholder="enter email" required><br><br>
-				Create Password : <input type="text" name="password" required minlength="8" maxlength "12"><br><br>
-				Confirm Password : <input type="text" name="password" required minlength="8" maxlength "12"><br><br>
-				<input type="submit" name="submit" value="Register" required><br><br
-			</form>
-		</fieldset>
+	
+		<div class="box">
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		<form>
-			First name : <input type="text" name="f_name" readonly value "Sanskriti"/> <br> <br>
-			Middle name : <input type="text" name="m_name" disabled value "mishra"/> <br> <br>
-			Last name : <input type="text" name= "l_name"/> <br> <br>
-			Gender :<br>
-			Male : <input type="radio" name="gender" value="male" />
-			Female : <input type="radio" name="gender" value="female" checked  ><br><br>
-			Email : <input type="email" name="email" placeholder="enter email"/> <br> <br>
-			Password: <input type="password" name="password"/><br><br>
-			Date : <input type="date" name="date"/> <br> <br>			
-			<input type="submit" name="submit"/>
+			<p>
+				<form method="post">
+					Name : <input type="text" name="Name" required maxlength="15" pattern="[A-Z a-z]+" title="text"><br><br>
+					Mobile No : <input type="tel" name="phone" required pattern ="[0-9]{10}" title="enter 10digit mobile no." minlength="0" maxlength="10">
+					<br><br>
+					Upload File/ Image : <input type="file" name="file" multiple><br><br>
+					Email Id : <input type="email" name="email" placeholder="enter email" required><br><br>
+					Create Password : <input type="password" name="password" required minlength="8" maxlength "12"><br><br>
+					Confirm Password : <input type="password" name="password" required minlength="8" maxlength "12"><br><br>
+					<input type="submit" name="submit" value="Register" required><br><br>
+				</form>
 			
+			</p>
 		
-		
-		
-		
-		
-		
-		
-		
-		
+		</div>		
 	</body>
 </html>
 

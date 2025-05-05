@@ -1,0 +1,188 @@
+body{
+	margin:0;
+padding:0;}
+
+		*{
+			box-sizing:border-box;
+			}
+		
+		.row{
+			display:flex;
+			}
+			
+		.col-1{width:8.33%}
+		.col-2{width:16.66%}
+		.col-3{width:25%}
+		.col-4{width:33.33%}
+		.col-5{width:41.66%}
+		.col-6{width:50%}
+		.col-7{width:58.33%}
+		.col-8{width:66.66%}
+		.col-9{width:75%}
+		.col-10{width:83.33%}
+		.col-11{width:91.66%}
+		.col-12{width:100%}
+		
+		
+			
+			
+		.header{
+			background-color:#f967cf;
+			color:white;
+			text-align:center;
+			font-family:sans-serif;
+			font-size:200%;
+			font-weight:600;
+			}
+			
+		.navbar{
+			background-color:#f99fdf;
+			color:black;
+			text-align:center;
+			}
+			
+		.dropdown{
+				display:none;
+		}
+		
+		ul li:hover .dropdown{
+			display:block;
+			position:absolute;
+			background-color:#f751cd;
+			color:black;
+			font-size:20px;
+			padding:20px;
+			margin-left:-20px;
+			margin-top:25px;
+			}
+					
+					
+		.dropdown ul li{
+			display:block;
+			}
+			
+		.dropdown ul{
+			margin:0;
+			padding:0;
+			}
+
+		.ul{
+			background-color:white;
+			color:black;
+			text-align:center;
+			position:sticky;
+			top:0;
+			}
+			
+		.ul li{
+			background-color:white;
+			display:inline-block;
+			font-size:20px;
+			padding:20px;
+			text-align:center;
+			}
+		
+		.ul li:hover{
+			background-color:#fcd1f1;
+			color:black;
+			border:5px solid #f751cd;
+			padding-left:25px;
+			transition:0.6s;
+		}
+		
+		.mainbar{
+			background-color:#fcc1ec;
+			color:black;
+			}
+			
+		
+		.background{
+			background-image:url(wallpaper.jpg);
+			background-repeat:no-repeat;
+			background-size:cover;
+			background-position:center;
+			padding:100px;
+		}
+
+
+
+		
+		.round_box{
+				width:300px;
+				height:300px;
+				border-radius:50%;
+				filter:blur(5px);
+				border:solid 5px pink;
+			}
+			
+		.roundtext{
+			position:absolute;
+			bottom:100px;
+			left:100px;
+		}	
+		.gift-box{
+		
+			display:flex;
+			gap:20px;
+			border:2px solid #f751cd ;
+			padding:10px;
+		}
+			
+		
+			
+		.border{
+			border:solid 7px black;
+			}
+			
+		.round_border{
+			border:solid 10px  #f967cf;
+			border-radius:50%;
+		}
+		
+		.circle-image {
+		  width: 350px;
+		  height: 350px;
+		  background-color: white;
+		  border-radius: 50%;
+		  position: absolute;
+		  left: 30%; 
+		  top: 120%;  
+		  transform: translate(-50%, -50%);
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  font-size: 20px;
+		  color: black;
+		  text-align: center;
+			}
+
+		.circle-text {
+		  position: absolute;
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		  color: black;
+		  font-size: 30px;
+		  text-align: center;
+		  width: 80%;
+		}
+			
+		.radius_box{
+
+			border:solid 10px black;
+			border-radius:30%;
+			}
+			
+		.padding{
+			padding:10px;
+			}
+		
+		
+				
+		
+		.footer{
+			background-color:#fcc1ec ;
+			color:black;
+			}
+			
+		
