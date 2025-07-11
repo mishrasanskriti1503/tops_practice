@@ -1,0 +1,47 @@
+/* Style the form container */
+.form-container {
+  background-color: #f0f8ff; /* Light blue background */
+  max-width: 500px;
+  height:400px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-field {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.text {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Style the submit button*/
+#submitBtn {
+  background-color: #4CAF50; 
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  left:46%;
+  top:425px;
+
+}
+
+/* Hover effect for submit button */
+#submitBtn:hover {
+  background-color: #45a049; /* Darker green */
+}
