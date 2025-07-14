@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>result</title>
+</head>
+
+<body>
+
+    <div style="text-align: center; width: 50%; border: solid black 1px;">
+        <h1>Marksheet</h1>
+
+
+        <form>
+            English:<input type="number" id="English" placeholder="enter Eng. marks" name="eng" required min="0"
+                max="100" /> <br><br>
+            Hindi:<input type="number" id="Hindi" placeholder="enter Eng. marks" name="Hindi" required min="0"
+                max="100" /><br><br>
+            Maths:<input type="number" id="Maths" placeholder="enter Maths marks" name="Maths" required min="0"
+                max="100" /><br><br>
+            Science:<input type="number" id="Science" placeholder="enter Science marks" name="science" required min="0"
+                max="100" /><br><br>
+            Sanskrit:<input type="number" id="Sanskrit" placeholder="enter sanskrit marks" name="sanskrit" required
+                min="0" max="100" /><br><br>
+
+            <button onclick="return result()"> Submit</button>
+
+
+        </form>
+
+        <h1 id="test1"></h1>
+        <h1 id="test2"></h1>
+        <h1 id="test3"></h1>
+       
+    </div>
+
+    <script>
+
+        function result() {
+            var English = document.getElementById('English').value;
+            var Hindi = document.getElementById('Hindi').value;
+            var Maths = document.getElementById('Maths').value;
+            var Science = document.getElementById('Science').value;
+            var Sanskrit = document.getElementById('Sanskrit').value;
+
+            var total = +English + +Hindi + +Maths + +Science + +Sanskrit;
+
+            document.getElementById('test1').innerHTML = "Total: " + total;
+
+            var per = (total * 100) / 500;
+
+            document.getElementById('test2').innerHTML = "Percentage: " + per + "%";
+
+            if (per > 80) {
+                document.getElementById('test3').innerHTML = "Grade: " + A++;
+            }
+
+            else if (per > 70) {
+                document.getElementById('test3').innerHTML = "Grade: " + A;
+            }
+
+            else if (per > 60) {
+                document.getElementById('test3').innerHTML = "Grade: " + B;
+            }
+
+            else if (per > 50) {
+                document.getElementById('test3').innerHTML = "Grade: " + c;
+            }
+
+             else if (per > 40) {
+                document.getElementById('test3').innerHTML = "Grade: " + pass;
+            }
+
+            else 
+            {
+                document.getElementById('test3').innerHTML = "Grade: " + Fail;
+            }
+            return false;
+        }
+
+    </script>
+
+</body>
+
+</html>

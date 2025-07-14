@@ -1,0 +1,494 @@
+* {
+	box-sizing: border-box;
+	margin: 0px;
+}
+
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+/*   default work on Mobile less 600 Resolution  */
+[class*="col-"] {
+	width: 100%;
+}
+
+/*   class work on tablet >600 && <768 */
+@media only screen and (min-width: 600px) {
+	.col-s-1 {
+		width: 8.33%;
+	}
+
+	.col-s-2 {
+		width: 16.66%;
+	}
+
+	.col-s-3 {
+		width: 25%;
+	}
+
+	.col-s-4 {
+		width: 33.33%;
+	}
+
+	.col-s-5 {
+		width: 41.66%;
+	}
+
+	.col-s-6 {
+		width: 50%;
+	}
+
+	.col-s-7 {
+		width: 58.33%;
+	}
+
+	.col-s-8 {
+		width: 66.66%;
+	}
+
+	.col-s-9 {
+		width: 75%;
+	}
+
+	.col-s-10 {
+		width: 83.33%;
+	}
+
+	.col-s-11 {
+		width: 91.66%;
+	}
+
+	.col-s-12 {
+		width: 100%;
+	}
+}
+
+/*   class work on Desktop >768 */
+@media only screen and (min-width: 768px) {
+	.col-1 {
+		width: 8.33%;
+	}
+
+	.col-2 {
+		width: 16.66%;
+	}
+
+	.col-3 {
+		width: 25%;
+	}
+
+	.col-4 {
+		width: 33.33%;
+	}
+
+	.col-5 {
+		width: 41.66%;
+	}
+
+	.col-6 {
+		width: 50%;
+	}
+
+	.col-7 {
+		width: 58.33%;
+	}
+
+	.col-8 {
+		width: 66.66%;
+	}
+
+	.col-9 {
+		width: 75%;
+	}
+
+	.col-10 {
+		width: 83.33%;
+	}
+
+	.col-11 {
+		width: 91.66%;
+	}
+
+	.col-12 {
+		width: 100%;
+	}
+}
+
+
+
+
+.header1 {
+	background-color: rgb(249, 234, 234);
+	height: 40px;
+	padding: 10px 30px;
+}
+
+.header-content {
+	font-style: fantacy;
+	font-size: 15px;
+	color: rgb(116, 117, 117);
+	padding: 10px 30px;
+}
+
+a{ 
+	text-decoration: none;
+	color:black;
+}
+
+.header2 {
+	background-color: white;
+	height: 100px;
+	padding: 20px 25px;
+	font-weight: 700;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+
+.nav-item {
+	display: inline-block;
+	padding: 15px;
+	font-size: 17px;
+	margin-top: 5px;
+	position: relative;
+}
+
+.nav-item:hover {
+	color: rgb(241, 143, 143);
+}
+
+.dropdown-parent {
+    position: relative;  
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+	color: black;
+    z-index: 1000;
+    padding: 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    min-width: 160px;
+}
+
+.nav-item:hover .dropdown {
+	display: block;
+}
+
+.dropdown li {
+	display:block;
+	padding: 10px 15px;
+	list-style-type: none;
+	
+}
+
+.dropdown li:hover {
+	background-color: rgb(239, 233, 233);
+	color: black;
+}
+
+
+button {
+	background-color: rgb(241, 143, 143);
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	margin-top: 25px;
+	margin-left: 65px;
+	font-weight: 600;
+	font-size: 17px;
+}
+
+button:hover {
+	background-color: rgb(224, 116, 116);
+}
+
+.background {
+	background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgba(38, 37, 29, 0.676)), url(../image/carousel-1.jpg);
+	background-size: cover;
+	height: 400px;
+	text-align: center;
+	margin-bottom: 40px;
+
+}
+
+.background-content {
+	position: absolute;
+	top: 300px;
+	left: 500px;
+	font-size: 80px;
+	font-weight: 600;
+	color: white;
+
+}
+
+/* For Home Page*/
+
+.background-content-1 {
+	position: absolute;
+	top: 340px;
+	left: 200px;
+	font-size: 75px;
+	font-weight: 600;
+	color: white;
+
+}
+
+.home-button {
+	padding: 20px;
+	background-color: rgba(240, 248, 255, 0);
+	color: white;
+	border: solid white 1px;
+	position: absolute;
+	top: 470px;
+	left: 455px;
+}
+
+.home-button:hover {
+	background-color: white;
+	color: black;
+}
+
+/* about button*/
+
+.box{
+	width:250px;
+	height:170px;
+	background-color:rgb(249, 234, 234); 
+	padding:20px 30px;
+	text-transform: uppercase;
+}
+
+.box-cont{
+	font-size: 60px;
+	font-weight:900;
+	color:rgb(241, 143, 143); 
+	text-align: center;
+}
+
+
+.home-background {
+	background-image: linear-gradient(rgb(0, 0, 0, 0.5), rgba(57, 54, 54, 0.647)), url(../image/carousel-3.jpg);
+	background-size: cover;
+	height: 700px;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.img-box {
+	height: 680px;
+	overflow: hidden;
+	position: relative;
+}
+
+.home-img {
+	background-size: cover;
+	height: 550px;
+	padding: 15px 15px 0px 15px;
+}
+
+/* 🟣 Pink Text Box */
+.img-text {
+	position: absolute;
+	top: 550px; /* Just below the image */
+	left: 15px;
+	right: 15px;
+	height: 120px;
+	background-color: rgb(241, 143, 143);
+	color: white;
+	text-align: center;
+	text-transform: uppercase;
+	padding-top: 20px;
+
+	transition: transform 1s ease, opacity 1s ease;
+	transform: translateY(0);
+	opacity: 1;
+	z-index: 2;
+}
+
+.img-box:hover .img-text {
+	transform: translateY(100px); /* slide downward */
+	opacity: 0;
+	pointer-events: none;
+}
+
+
+/* ⚫ Black Box (same space) */
+.mydiv {
+	position: absolute;
+	top: 550px; /* exactly below the image */
+	left: 15px;
+	right: 15px;
+	height: 120px;
+	background-color: black;
+	border: solid 1px black;
+
+	/* Start hidden */
+	opacity: 0;
+	visibility: hidden;
+	filter: blur(2px);
+
+	/* ✅ No slide from image — only fade + blur fix */
+	transition:
+		opacity 0.5s ease,
+		visibility 0.5s ease,
+		filter 0.5s ease;
+	z-index: 1;
+}
+
+.img-box:hover .mydiv {
+	opacity: 1;
+	visibility: visible;
+	filter: blur(0);
+	z-index: 3;
+}
+
+
+/* 🔘 Button inside Black Box */
+.img-text2 {
+	width: 150px;
+	background-color: rgb(241, 143, 143);
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	font-weight: 600;
+	font-size: 17px;
+	position: absolute;
+	top: 17px;
+	left: 38px;
+	z-index: 5;
+	cursor: pointer;
+}
+
+
+.swing-out-top-bck {
+	-webkit-animation: swing-out-top-bck 1s cubic-bezier(0.600, -0.280, 0.735, 0.045) 0.3s both;
+	animation: swing-out-top-bck 1s cubic-bezier(0.600, -0.280, 0.735, 0.045) 0.3s both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2025-6-26 15:48:43
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation swing-out-top-bck
+ * ----------------------------------------
+ */
+ 
+@-webkit-keyframes swing-out-top-bck {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotateX(-100deg);
+            transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 0;
+  }
+}
+@keyframes swing-out-top-bck {
+  0% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotateX(-100deg);
+            transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 0;
+  }
+}
+
+
+
+
+.our-service {
+	background-color: rgb(249, 234, 234);
+	color: rgb(241, 143, 143);
+	font-size: 20px;
+	padding: 5px 10px;
+	text-align: center;
+}
+
+.content {
+	margin-top: 10px;
+	font-size: 40px;
+	font-weight: 600;
+
+}
+
+.content-1 {
+	margin-top: 10px;
+	font-size: 35px;
+	font-weight: 600;
+
+}
+
+.content-box {
+	margin-top: 200px;
+	margin-bottom: 200px;
+	margin-left: 60px;
+	margin-right: 60px;
+}
+
+.img-1 {
+
+	background-size: cover;
+	height: 600px;
+	width: 600px;
+
+}
+
+.img-content {
+	background-color: rgb(249, 234, 234);
+	padding: 40px;
+	border: solid black 1px;
+	position: absolute;
+	top: 15%;
+	bottom: 15%;
+	left: 530px;
+	z-index: 5;
+}
+
+
+.footer {
+	background-color: rgb(32, 26, 26);
+	color: white;
+	padding: 80px 60px;
+	font-size: 19px;
+	
+}
+
+.footer2 {
+	background-color: rgb(32, 26, 26);
+	color: white;
+	padding: 100px 10px;
+	font-size: 17px;
+
+
+}

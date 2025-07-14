@@ -1,0 +1,82 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    
+    <script>
+
+        // single line comment
+
+        document.write('Hello how are you !')
+
+        document.write('<h1> Hello how are you ! </h1>')
+
+        /*
+        multi line
+        comment
+        */
+
+        document.write('<h2> Hello How are you ! '+' I am ok <br><br>' );
+
+        document.write(10+10);
+
+        document.write("<h1>" + (10+10) +"</h1>");
+        document.write("<h1>" + (10*10) +"</h1>");
+        document.write("<h1>" + (10/4) +"</h1>");
+        document.write("<h1>" + (10-2) +"</h1>");
+
+        var a=10;
+        var b=20;
+        var c;
+
+        c=a+b;
+        document.write("<h2>" + c + "</h2>");
+
+        var a=5;
+        var b=15;
+        var c=3;
+        var d;
+
+        d=a+b-c;
+        document.write(d);
+
+        var a=10;
+        var b=20;
+        var c;
+
+        c=a*b;
+        document.write("<h2>" + c + "</h2>");
+
+        var a=100;
+        var b=20;
+        var c;
+
+        c=a/b;
+        document.write("<h2>" + c + "</h2>");
+
+        var age=20;
+
+            if(age>18)
+        {
+            document.write("<h2> Eligible for driving</h2>");
+        }
+            else
+        {
+            document.write("<h2> Not Eligible for driving</h2>");
+        }
+
+       
+    </script>
+
+    <h1 id="name" style="background-color:black; color:white;"> Hello my name is Kriti</h1>
+
+    <script>
+        document.getElementById("name").innerHTML="Hello I am Raj";
+        document.getElementById("name").style.backgroundColor="red";
+    </script>
+</body>
+
+</html>

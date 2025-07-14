@@ -1,0 +1,25 @@
+
+h1,h2,h3{
+    color: red;background-color: cadetblue;
+}
+
+.test1{
+    color: aqua;background-color: blue;text-align: left;
+}
+.test2{
+    color: rgb(60, 8, 218);background-color: rgb(11, 235, 26);text-align: right;
+}
+.upper{
+    text-transform: uppercase;
+}
+.underline{
+  text-decoration: underline;  
+}
+#demo{
+    background-color: black;
+    color: white;
+}
+h4.myhead{
+    text-shadow: 5px 5px 2px red;
+}
+

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width:device-width,initial-scale=1.0">
+
+    <style>
+        .border-box {
+            border: 10px dotted red;
+            padding: 15px;
+            background-color: aquamarine;
+            background-clip: border-box;
+        }
+
+        .padding-box {
+            border: 10px dotted red;
+            padding: 15px;
+            background-color: aquamarine;
+            background-clip: padding-box;
+        }
+
+        .content-box {
+            border: 10px dotted red;
+            padding: 15px;
+            background-color: aquamarine;
+            background-clip: content-box;
+        }
+
+        .border-box2 {
+            border: 30px solid rgb(24, 24, 24);
+            padding: 15px;
+            background-image: url(background.jpg);
+            background-origin: border-box;
+            background-repeat: no-repeat;
+        }
+
+        .padding-box2 {
+            border: 30px solid rgb(24, 24, 24);
+            padding: 15px;
+            background-image: url(background.jpg);
+            background-origin: padding-box;
+            background-repeat: no-repeat;
+        }
+
+        .content-box2 {
+             border: 30px solid rgb(24, 24, 24);
+            padding: 15px;
+            background-image: url(background.jpg);
+            background-origin: content-box;
+            background-repeat: no-repeat;
+        }
+
+        .image {
+            background-image: url(sun.jpg), url(background.jpg), url(cloud.jpg);
+            background-position: 1050px 20px, 0px 180px, left top;
+            background-repeat: no-repeat;
+            background-size: 150px 150px, 100% 400px, 100% 100%;
+            border: 5px solid red;
+            padding: 15px;
+        }
+
+        .image2 {
+            background: url(sun.jpg)1050px 20px no-repeat, url(background.jpg)0px 180px no-repeat, url(cloud.jpg)left top no-repeat;
+            background-size: 150px 150px, 100% 400px, 100% 100%;
+            border: 5px solid red;
+            padding: 15px;
+        }
+
+        .grad {
+        background-image: repeating-linear-gradient(to right,red 10%, yellow 20%, green 30%);
+        }
+
+        .grad2 {
+         height: 200px;
+        background-image: repeating-linear-gradient(45deg,red 20%,blue 40%,green 70%);
+        }
+
+        .grad3 {
+         height: 200px;
+        background-image: repeating-linear-gradient(to top right,red 20%,blue 40%,green 80%);
+        }
+
+        .grad4 {
+         height: 200px;
+        background-image: repeating-linear-gradient(to bottom right,red 20%,blue 40%,green 80%);
+        }
+
+        .gradimg{
+        padding:50px;
+        background-image:linear-gradient(to right,rgb(0, 0, 0,0.8),rgb(255, 255, 255,0.6),rgb(0,0,0,0.8)),url(cloud.jpg);
+        background-repeat:no-repeat;
+        background-size:100% 100%;
+        color:white;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <!-- background -->
+
+    <p class="border-box">What is the prompt I have been given? If you are writing a paragraph as a response or answer
+        to a particular prompt, such as "You have decided to donate money to charity. Which charity do you choose and
+        why?" or "Describe your favorite day of the week," you will need to think carefully about that prompt and make
+        sure you are directly addressing it, rather than going off-topic.
+        What are the main ideas or topics that I need to address? Think about the topic you are being asked or have
+        decided to write about, and consider what the most relevant ideas or s relating to that topic are.
+        As paragraphs are usually relatively short, it is important that you try to hit on all the main ideas, without
+        going off-topic.
+        Who am I writing for? Think about whom the intended readership of this paragraph or paper will be.
+        What is their prior knowledge? Are they familiar with the topic at hand, or will it require many explanatory
+        sentences?
+        If your paragraphs are part of a larger essay, writing an essay outline can help you define the major ideas or
+        goals of each paragraph.
+        Step 2 Write down information and ideas relating to that topic.</p>
+
+
+
+    <p class="padding-box">What is the prompt I have been given? If you are writing a paragraph as a response or answer
+        to a particular prompt, such as "You have decided to donate money to charity. Which charity do you choose and
+        why?" or "Describe your favorite day of the week," you will need to think carefully about that prompt and make
+        sure you are directly addressing it, rather than going off-topic.
+        What are the main ideas or topics that I need to address? Think about the topic you are being asked or have
+        decided to write about, and consider what the most relevant ideas or s relating to that topic are.
+        As paragraphs are usually relatively short, it is important that you try to hit on all the main ideas, without
+        going off-topic.
+        Who am I writing for? Think about whom the intended readership of this paragraph or paper will be.
+        What is their prior knowledge? Are they familiar with the topic at hand, or will it require many explanatory
+        sentences?
+        If your paragraphs are part of a larger essay, writing an essay outline can help you define the major ideas or
+        goals of each paragraph.
+        Step 2 Write down information and ideas relating to that topic.</p>
+
+
+
+    <p class="content-box">What is the prompt I have been given? If you are writing a paragraph as a response or answer
+        to a particular prompt, such as "You have decided to donate money to charity. Which charity do you choose and
+        why?" or "Describe your favorite day of the week," you will need to think carefully about that prompt and make
+        sure you are directly addressing it, rather than going off-topic.
+        What are the main ideas or topics that I need to address? Think about the topic you are being asked or have
+        decided to write about, and consider what the most relevant ideas or s relating to that topic are.
+        As paragraphs are usually relatively short, it is important that you try to hit on all the main ideas, without
+        going off-topic.
+        Who am I writing for? Think about whom the intended readership of this paragraph or paper will be.
+        What is their prior knowledge? Are they familiar with the topic at hand, or will it require many explanatory
+        sentences?
+        If your paragraphs are part of a larger essay, writing an essay outline can help you define the major ideas or
+        goals of each paragraph.
+        Step 2 Write down information and ideas relating to that topic.</p>
+    <br><br>
+
+    <!-- background image -->
+
+   
+
+    <p class="border-box2">What is the prompt I have been given? If you are writing a paragraph as a response or answer
+        to a particular prompt, such as "You have decided to donate money to charity. Which charity do you choose and
+        why?" or "Describe your favorite day of the week," you will need to think carefully about that prompt and make
+        sure you are directly addressing it, rather than going off-topic.
+        What are the main ideas or topics that I need to address? Think about the topic you are being asked or have
+        decided to write about, and consider what the most relevant ideas or s relating to that topic are.
+        As paragraphs are usually relatively short, it is important that you try to hit on all the main ideas, without
+        going off-topic.
+        Who am I writing for? Think about whom the intended readership of this paragraph or paper will be.
+        What is their prior knowledge? Are they familiar with the topic at hand, or will it require many explanatory
+        sentences?
+        If your paragraphs are part of a larger essay, writing an essay outline can help you define the major ideas or
+        goals of each paragraph.
+        Step 2 Write down information and ideas relating to that topic.</p>
+
+        <p class="padding-box2">What is the prompt I have been given? If you are writing a paragraph as a response or answer
+        to a particular prompt, such as "You have decided to donate money to charity. Which charity do you choose and
+        why?" or "Describe your favorite day of the week," you will need to think carefully about that prompt and make
+        sure you are directly addressing it, rather than going off-topic.
+        What are the main ideas or topics that I need to address? Think about the topic you are being asked or have
+        decided to write about, and consider what the most relevant ideas or s relating to that topic are.
+        As paragraphs are usually relatively short, it is important that you try to hit on all the main ideas, without
+        going off-topic.
+        Who am I writing for? Think about whom the intended readership of this paragraph or paper will be.
+        What is their prior knowledge? Are they familiar with the topic at hand, or will it require many explanatory
+        sentences?
+        If your paragraphs are part of a larger essay, writing an essay outline can help you define the major ideas or
+        goals of each paragraph.
+        Step 2 Write down information and ideas relating to that topic.</p>
+
+        <p class="content-box2">What is the prompt I have been given? If you are writing a paragraph as a response or answer
+        to a particular prompt, such as "You have decided to donate money to charity. Which charity do you choose and
+        why?" or "Describe your favorite day of the week," you will need to think carefully about that prompt and make
+        sure you are directly addressing it, rather than going off-topic.
+        What are the main ideas or topics that I need to address? Think about the topic you are being asked or have
+        decided to write about, and consider what the most relevant ideas or s relating to that topic are.
+        As paragraphs are usually relatively short, it is important that you try to hit on all the main ideas, without
+        going off-topic.
+        Who am I writing for? Think about whom the intended readership of this paragraph or paper will be.
+        What is their prior knowledge? Are they familiar with the topic at hand, or will it require many explanatory
+        sentences?
+        If your paragraphs are part of a larger essay, writing an essay outline can help you define the major ideas or
+        goals of each paragraph.
+        Step 2 Write down information and ideas relating to that topic.</p>
+   
+
+    <!-- Multiple background image -->
+
+    <h1>Multiple Backgrounds</h1>
+    <p>The following div element has three background images:</p>
+
+    <div class="image">
+        <h1>Lorem Ipsum Dolor</h1>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+            dolore magna aliquam erat volutpat.</p>
+        <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+            commodo consequat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+            dolore magna aliquam erat volutpat.</p>
+        <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+            commodo consequat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+            dolore magna aliquam erat volutpat.</p>
+        <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+            commodo consequat.</p>
+    </div>
+
+    <br><br>
+
+    <div class="image2">
+        <h1>Lorem Ipsum Dolor</h1>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+            dolore magna aliquam erat volutpat.</p>
+        <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+            commodo consequat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+            dolore magna aliquam erat volutpat.</p>
+        <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+            commodo consequat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
+            dolore magna aliquam erat volutpat.</p>
+        <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+            commodo consequat.</p>
+    </div>
+
+    <!-- background gradient -->
+
+    <p class="grad">What is the prompt I have been given? If you are writing a paragraph as a response or answer
+        to a particular prompt, such as "You have decided to donate money to charity. Which charity do you choose and
+        why?" or "Describe your favorite day of the week," you will need to think carefully about that prompt and make
+        sure you are directly addressing it, rather than going off-topic.
+        What are the main ideas or topics that I need to azddress? Think about the topic you are being asked or have
+        decided to write about, and consider what the most relevant ideas or s relating to that topic are.
+        As paragraphs are usually relatively short, it is important that you try to hit on all the main ideas, without
+        going off-topic.
+        Who am I writing for? Think about whom the intended readership of this paragraph or paper will be.
+        What is their prior knowledge? Are they familiar with the topic at hand, or will it require many explanatory
+        sentences?
+        If your paragraphs are part of a larger essay, writing an essay outline can help you define the major ideas or
+        goals of each paragraph.
+        Step 2 Write down information and ideas relating to that topic.</p>
+    
+   <p class="grad2">What is the prompt I have been given? If you are writing a paragraph as a response or answer
+        to a particular prompt, such as "You have decided to donate money to charity. Which charity do you choose and
+        why?" or "Describe your favorite day of the week," you will need to think carefully about that prompt and make
+        sure you are directly addressing it, rather than going off-topic.
+        What are the main ideas or topics that I need to address? Think about the topic you are being asked or have
+        decided to write about, and consider what the most relevant ideas or s relating to that topic are.
+        As paragraphs are usually relatively short, it is important that you try to hit on all the main ideas, without
+        going off-topic.
+        Who am I writing for? Think about whom the intended readership of this paragraph or paper will be.
+        What is their prior knowledge? Are they familiar with the topic at hand, or will it require many explanatory
+        sentences?
+        If your paragraphs are part of a larger essay, writing an essay outline can help you define the major ideas or
+        goals of each paragraph.
+        Step 2 Write down information and ideas relating to that topic.</p>
+
+    <p class="grad3">What is the prompt I have been given? If you are writing a paragraph as a response or answer
+        to a particular prompt, such as "You have decided to donate money to charity. Which charity do you choose and
+        why?" or "Describe your favorite day of the week," you will need to think carefully about that prompt and make
+        sure you are directly addressing it, rather than going off-topic.
+        What are the main ideas or topics that I need to address? Think about the topic you are being asked or have
+        decided to write about, and consider what the most relevant ideas or s relating to that topic are.
+        As paragraphs are usually relatively short, it is important that you try to hit on all the main ideas, without
+        going off-topic.
+        Who am I writing for? Think about whom the intended readership of this paragraph or paper will be.
+        What is their prior knowledge? Are they familiar with the topic at hand, or will it require many explanatory
+        sentences?
+        If your paragraphs are part of a larger essay, writing an essay outline can help you define the major ideas or
+        goals of each paragraph.
+        Step 2 Write down information and ideas relating to that topic.</p>
+
+    <p class="grad4">What is the prompt I have been given? If you are writing a paragraph as a response or answer
+        to a particular prompt, such as "You have decided to donate money to charity. Which charity do you choose and
+        why?" or "Describe your favorite day of the week," you will need to think carefully about that prompt and make
+        sure you are directly addressing it, rather than going off-topic.
+        What are the main ideas or topics that I need to address? Think about the topic you are being asked or have
+        decided to write about, and consider what the most relevant ideas or s relating to that topic are.
+        As paragraphs are usually relatively short, it is important that you try to hit on all the main ideas, without
+        going off-topic.
+        Who am I writing for? Think about whom the intended readership of this paragraph or paper will be.
+        What is their prior knowledge? Are they familiar with the topic at hand, or will it require many explanatory
+        sentences?
+        If your paragraphs are part of a larger essay, writing an essay outline can help you define the major ideas or
+        goals of each paragraph.
+        Step 2 Write down information and ideas relating to that topic.</p>
+
+    <p class="gradimg">What is the prompt I have been given? If you are writing a paragraph as a response or answer
+        to a particular prompt, such as "You have decided to donate money to charity. Which charity do you choose and
+        why?" or "Describe your favorite day of the week," you will need to think carefully about that prompt and make
+        sure you are directly addressing it, rather than going off-topic.
+        What are the main ideas or topics that I need to address? Think about the topic you are being asked or have
+        decided to write about, and consider what the most relevant ideas or s relating to that topic are.
+        As paragraphs are usually relatively short, it is important that you try to hit on all the main ideas, without
+        going off-topic.
+        Who am I writing for? Think about whom the intended readership of this paragraph or paper will be.
+        What is their prior knowledge? Are they familiar with the topic at hand, or will it require many explanatory
+        sentences?
+        If your paragraphs are part of a larger essay, writing an essay outline can help you define the major ideas or
+        goals of each paragraph.
+        Step 2 Write down information and ideas relating to that topic.</p>
+    
+
+</body>
+
+</html>

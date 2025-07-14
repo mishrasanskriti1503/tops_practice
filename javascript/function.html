@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Function</title>
+</head>
+<body>
+
+    <script>
+        function add(){
+            var a=10;
+            var b=25;
+            document.writeln(a+b);
+        }
+
+        add();
+        add();
+
+        //function with paremeter
+
+        function sum(a,b,c){
+            document.writeln(a+b+c);
+        }
+
+        sum("<h3>" + 5,10,5 + "<br> </h3>");
+        sum(10,20,10);
+        sum(30,30,20);
+
+         //function with paremeter with default value
+
+        function sum(a=0,b=0,c=0){
+            document.writeln(a+b+c);
+        }
+
+        sum(5,10,5);
+        sum(10,40,10);
+        sum(30,20,20);
+
+        //function with return
+
+        function addition(){
+            var a=5;
+            var b=12;
+            return(a+b);
+        }
+        
+        var ans=addition();
+        document.write(ans);
+        document.write(addition());
+    </script>
+    
+</body>
+</html>a
