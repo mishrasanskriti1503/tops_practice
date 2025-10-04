@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>image</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <input type="submit" value="bulbon" onclick="onbulb()">
+  <img src="pic_bulboff.gif" id="bulb" height="200px" width="100px" onmouseover="bulbon()" onmouseout="bulboff" >
+  <input type="submit" value="bulboff" onclick="bulboff()">
+</body>
+
+<script>
+
+    function onbulb(){
+        var img=document.getElementById("bulb");
+        img.src="pic_bulbon.gif";
+    
+    }
+
+    function bulboff(){
+        var img=document.getElementById("bulb");
+        img.src="pic_bulboff.gif";
+    }
+</script>
+</html>

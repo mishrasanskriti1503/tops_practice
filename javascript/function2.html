@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>function</title>
+</head>
+
+<body>
+    <script>
+        var a = 10;
+        var b = 20;
+        var c;
+        c = a + b;
+        document.write("<H2>" + c +"</h2>");
+
+        function sum()
+            {
+                var a = 10;
+                var b = 30;
+                var c;
+                c = a + b;
+                document.write("<H2>" + c +"</h2>"); 
+            }
+
+            sum();
+            sum();
+
+
+    //simple function 
+
+        function sum2 ()
+            {
+                var a=3;
+                var b=5;
+                document.write("<H2> sum of a & b is :" + (a+b) +"</h2>");
+            }
+
+        sum2();
+
+        //functiom with parameter
+
+        function sum3 (a,b,c)
+        {
+            document.write("<H2> sum of a,b & c is :" + (a+b+c) +"</h2>");
+        }
+         
+            sum3(5, 5, 5);
+            sum3(10,15,20)
+            sum3(25, 35,45);
+            sum3(12,34,16);
+
+        //Function with parameter with default value
+
+            function sum4(a=0,b=0,c=0)
+    
+            {
+                document.write("<h2 style='color:red'> sum of a,b,c is:"+(a+b+c)+"</h2>");
+            }
+
+            sum4(10,34,13);
+            sum4(5, 5, 5);
+            sum4(10,15,20);
+            sum4(25, 35,45);
+            sum4(12,34,16);
+
+            // function with return
+            
+    </script>
+</body>
+
+</html>

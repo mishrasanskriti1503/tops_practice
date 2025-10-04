@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Conditional Statement</title>
+</head>
+<body>
+    <script>
+
+        //if
+
+        var age=19;
+        if (age>18)
+            {document.write ('<h2 style="color:Green">Eligible');
+            }
+        
+         //if else
+        var age=17;
+        if(age>=18)
+            {document.write("<h2 style='color:green'>Eligible</h2>");   
+            }
+        else
+        {document.write("<h2 style='color:red'>Not Eligible</h2>");
+        }
+
+        /*Turnary Operator (cond) ? 'yes' : 'No'
+        if else ka shotcut*/
+
+        var age=19;
+        var ans=(age>18) ? '<h2 style="color:green"> Eligible </h2>' : '<h2 style="color:red"> Not Eligible </h2>';
+        document.write ( ans );
+
+        //if elseif else
+
+        var name="raj";
+        if(name=="raj")
+        {
+            document.write("<h2 style='color:blue'>Name is Raj</h2>");
+        }
+
+         else if(name=="kriti")
+        {
+            document.write("<h2 style='color:blue'>Name is Kriti</h2>");
+        }
+
+         else
+        {
+            document.write("<h2 style='color:red'>All the above condition are False</h2>");
+        }
+
+    var name="kriti";
+    if(name=="raj")
+    {
+        document.write("<h2 style='color:blue'>Name is raj</h2>");
+    }
+     
+    else if(name=="sanskriti")
+    {
+      document.write("<h2 style='color:blue'>Name is Kriti</h2>");
+    }
+
+     else
+        {
+            document.write("<h2 style='color:red'>All the above condition are False</h2>");
+        }
+
+    //Switch case
+
+    switch('30')
+    {
+        case'10': 
+         document.write("<h2 style='color:blue'>Ans is 10</h2>");
+        break;
+   
+        case'20':
+          document.write("<h2 style='color:blue'>Ans is 20</h2>");
+        break;
+    
+        case'30':  document.write("<h2 style='color:blue'>Ans is 30</h2>");
+        break;
+
+        case'40':  document.write("<h2 style='color:blue'>Ans is 40</h2>");
+        break;
+
+         case'50':  document.write("<h2 style='color:blue'>Ans is 50</h2>");
+        break;
+    }
+
+    switch("50")
+    {
+     case"10": 
+        document.write("<h2 style='color:blue'>Ans is 10</h2>");
+        break;   
+
+    case"15":
+        document.write("<h2 style='color:blue'>Ans is 15</h2>");
+        break;
+
+    case"20":
+        document.write("<h2 style='color:blue'>Ans is 30</h2>");
+        break;
+
+    case"25":
+        document.write("<h2 style='color:blue'>Ans is 25</h2>");
+        break;
+
+     case'30':  
+        document.write("<h2 style='color:blue'>Ans is 30</h2>");
+        break;
+
+    default:
+        document.write("<h2 style='color:red'>All the above condition are false</h2>");
+        break;
+    }
+    
+//Nested if
+    var age=19;
+    if(age>18)
+        
+        { 
+                if(age==18)
+            {
+                document.write("<h2 style='color:green'>Eligible</h2>");
+            }
+
+        else
+            { 
+                document.write("<h2 style='color:green'>Eligible</h2>");
+            }
+        }
+
+        else
+        {
+            { 
+                document.write("<h2 style='color:red'>Not Eligible</h2>");
+            }
+        }
+
+
+            
+
+    </script>
+</body>
+</html>

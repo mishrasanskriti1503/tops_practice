@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap link-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--Bootstrap icon link-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- JQuerry CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <style>
+        .border-radius {
+            border-radius: 15px;
+        }
+
+        .margin-top {
+            margin-top: 100px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #0dcaf0 !important;
+            background-color: white;
+            transition: 0.3s;
+        }
+
+        .dropdown-menu .dropdown-item:hover {
+            color: #0dcaf0 !important;
+            background-color: white;
+            transition: 0.3s;
+        }
+
+        .img-hover-zoom {
+            transition: transform 0.4s ease;
+        }
+
+        .img-hover-zoom:hover {
+            transform: scale(1.05);
+        }
+
+        .left-border-info {
+            border-left: 5px solid rgb(69, 169, 209);
+
+            box-shadow: -3px 0 6px rgba(69, 169, 209, 0.3);
+
+        }
+
+        .custom-card {
+            transition: all 0.3s ease;
+            border-top: 3px solid transparent;
+        }
+
+        .custom-card:hover {
+            transform: scale(1.03);
+            border-top: 3px solid #0dcaf0;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .footer-content p:hover,
+        .footer-content a:hover {
+            color: var(--bs-info) !important;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav style="background-color:rgb(9, 80, 132)" class="navbar navbar-expand-lg navbar-dark ">
+        <div class="container-fluid">
+
+            <!-- Logo -->
+
+            <img src="https://bootstrapmade.com/assets/img/logo.png" alt="logo" width="120">
+
+            <!-- Icon -->
+            <div class="d-flex align-items-center text-light me-3">
+                <i class="bi bi-pc-display-horizontal mx-2"></i>
+                <i class="bi bi-tablet mx-2"></i>
+                <i class="bi bi-phone mx-2"></i>
+            </div>
+
+            <div class="mx-auto fw-bold text-light">
+                Medinest
+            </div>
+
+            <!--icons + button -->
+            <div class="d-flex align-items-center">
+                <i class="bi bi-box-arrow-up-right text-light me-3"></i>
+                <button class="btn btn-outline-info text-light">Download</button>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- navbar 2-->
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+
+            <span class="fs-2 fw-bold">Medi</span>
+            <span class="fs-2 fw-bold text-info">Nest</span>
+
+
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav w-100 d-flex justify-content-between">
+                    <li class="nav-item ps-5">
+                        <a class="nav-link active" href="medi.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about-medi.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="departmentmedi.html">Department</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="service-medi.html">Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Doctor-medi.html">Doctor</a>
+                    </li>
+
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" aria-expanded="false">
+                            More Pages
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="departmentmedi.html">Department Detail</a></li>
+                            <li><a class="dropdown-item" href="service-medi.html">Service Detail</a></li>
+                            <li><a class="dropdown-item" href="#">Appointment</a></li>
+                            <li><a class="dropdown-item" href="#">Gallery</a></li>
+                            <li><a class="dropdown-item" href="#">Privacy</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Contact</a>
+                    </li>
+
+                    <!----Modal---->
+
+                    
+
+
+                    <!-- Right side button -->
+                    <li class="nav-item">
+                        <button class="btn btn-outline-info me-2" type="button" data-bs-toggle="modal" data-bs-target="#appointmentModal">Appointment</button>
+                    </li>
+
+                    
+<!-- Appointment Modal -->
+<div class="modal fade" id="appointmentModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h5 class="modal-title">Book Appointment</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal Body with Form -->
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-control" placeholder="Enter your name">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" placeholder="Enter your email">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Preferred Date</label>
+            <input type="date" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Message</label>
+            <textarea class="form-control" rows="3" placeholder="Write your message"></textarea>
+          </div>
+        </form>
+      </div>
+
+           <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-success">Book Now</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+    <!--------------->
+
+                    <li class="nav-item ">
+                        <button class="nav-link active" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#myoffcanvas">
+                            <i class="bi bi-list"></i>
+                        </button>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-------------------------------offcanvas content------------------------------------------->
+
+    <div class="offcanvas offcanvas-end " id="myoffcanvas">
+        <div class="offcanvas-header ">
+            <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="offcanvas"></button>
+            <h1 class="offcanvas-title ">MediNest</h1>
+        </div>
+
+
+        <div class="row offcanvas-body">
+            <div class="col-md-12 p-4 bg-white rounded shadow-sm custom-card">
+                <form>
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password"
+                            required>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                    <small class="d-block mt-3 text-center">
+                        <a href="#">Forgot Password?</a> | <a href="#">Create an account</a>
+                    </small>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-------------------------------------------------------Mainbar----------------------------------------------------------->
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="offset-md-6 col-md-6 ">
+                <span class="badge rounded-pill bg-info pt-2 pb-2 fs-3 fw-semibold">Trusted Health Care
+                    Provider</span>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+
+            <!--left side img-->
+            <div class="col-md-5 ">
+                <img class="border-radius"
+                    src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/staff-8.webp" alt="image"
+                    width="100%">
+            </div>
+
+            <!--right side text-->
+            <div class="col-md-7 text-center">
+                <p class="fs-1 fw-bold">
+                    Excellence in Medical Care Since 1985
+                </p>
+
+                <p class="fs-5">Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+                    Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget
+                    consectetur sed,
+                    convallis at tellus.</p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h1>35+</h1>
+                        Years Experience
+                    </div>
+                    <div class="col-md-4">
+                        <h1>150+</h1>
+                        Medical Specialists
+                    </div>
+                    <div class="col-md-4">
+                        <h1>12</h1>
+                        Clinic Locations
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <button type="button" class="btn btn-info border-radius p-3 text-light">Schedule
+                            Concultation</button>
+                        <button type="button" class="btn btn-outline-info border-radius p-3 ms-5">Watch over
+                            story</button>
+                    </div>
+                </div>
+
+                <div class="row text-center mt-3">
+                    <div class="col-md-4  fw-bold">
+                        <i class="bi bi-calendar-check text-info"></i> Find Available Times
+                    </div>
+
+                    <div class="col-md-4 fw-bold">
+                        <i class="bi bi-chat-dots  text-info "></i> Chat with support
+                    </div>
+
+                    <div class="col-md-4 fw-bold">
+                        <i class="bi bi-person-square text-info"></i> Patient portal
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row margin-top text-center">
+            <div class="col-md-12">
+                <p style="color:rgb(9, 80, 132)" class="fs-1 fw-bold">Excellence in Healthcare Since</p>
+                <p style="color:rgb(9, 80, 132)" class="fs-1 fw-bold">1985</p>
+
+                <p class="fs-5">
+                    We are committed to providing world-class medical care
+                </p>
+                <p class="fs-5">
+                    through innovation, compassion, and unwavering dedication to our
+                </p>
+                <p class="fs-5">
+                    patients' wellbeing and recovery.
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6 mt-5">
+                    <div class="row g-3">
+
+                        <!-- Left side image -->
+                        <div class="col-8 mt-5">
+                            <img src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/facilities-6.webp"
+                                class="img-fluid shadow-sm rounded-3 img-hover-zoom"
+                                style="height:400px; width:100%; object-fit:cover;" alt="image">
+                        </div>
+
+                        <!-- right side image -->
+                        <div class="col-4 mt-5 d-flex flex-column justify-content-between">
+                            <img src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/consultation-3.webp"
+                                class="img-fluid shadow-sm rounded-3 img-hover-zoom mb-3"
+                                style="height:195px; width:100%; object-fit:cover;" alt="image">
+
+                            <img src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/surgery-2.webp"
+                                class="img-fluid shadow-sm rounded-3 img-hover-zoom"
+                                style="height:195px; width:100%; object-fit:cover;" alt="image">
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Right Side Text -->
+                <div class="col-md-6">
+
+                    <div class="p-4 mb-4 bg-white rounded shadow-sm left-border-info">
+                        <div class="row align-items-center">
+
+                            <!-- Left side icon -->
+                            <div class="col-2 text-center">
+                                <i class="bi bi-heart-pulse text-info fs-1"></i>
+                            </div>
+
+
+                            <!-- Right side text -->
+                            <div class="col-10">
+                                <h5 class="fw-bold mb-2">Patient-Centered Approach</h5>
+                                <p class="fs-5">
+                                    Every treatment plan is carefully customized to meet individual patient
+                                    needs and medical history.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Features List -->
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="bi bi-circle-fill text-info"></i>
+                            Advanced diagnostic technology and imaging
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-circle-fill text-info"></i>
+                            Board-certified physicians and specialists
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-circle-fill text-info"></i>
+                            Comprehensive rehabilitation programs
+                        </li>
+                        <li>
+                            <i class="bi bi-circle-fill text-info"></i>
+                            24/7 emergency and critical care services
+                        </li>
+                    </ul>
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <h3 class="text-info">98%</h3>
+                            <p>Patient Satisfaction</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 class="text-info">35K+</h3>
+                            <p>Lives Improved</p>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-info text-light fs-5 border-radius"
+                        style="padding: 15px 50px 15px 50px;">Explore our services</button>
+                    <br>
+                    <button type="button" class="btn btn-outline-info  fs-5 border-radius mt-3"
+                        style="padding: 15px 40px 15px 40px;">Schedule consultation</button>
+                </div>
+
+                <div style="margin-top:100px; margin-bottom:80px;" class="container text-center">
+                    <h1>Featured Departments</h1>
+
+                    <p>
+                        Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit
+                    </p>
+                </div>
+
+
+
+
+                <div class="container">
+                    <div class="row">
+
+                        <!-- Left Side Images -->
+                        <div class="col-md-6">
+                            <!-- Card -->
+                            <div class=" mb-4 bg-white">
+
+                                <p class="text-uppercase text-info"> Emergency medicine</p>
+                                <h1>24/7 Emergency Care Services</h1>
+                                <p>
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                    accusantium doloremque laudantium, totam rem aperiam,
+                                </p>
+                                <p>eaque ipsa quae ab illo inventore veritatis et quasi architecto
+                                    beatae vitae dicta sunt explicabo.</p>
+
+                            </div>
+
+                            <!-- Features List -->
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <i class="bi bi-circle-fill text-info"></i>
+                                    24/7 Emergency Response
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-circle-fill text-info"></i>
+                                    Advanced Life Support
+                                </li>
+                                <li class="mb-2">
+                                    <i class="bi bi-circle-fill text-info"></i>
+                                    Trauma Care Specialists
+                                </li>
+
+                            </ul>
+                            <p class="fw-bold"> Learn more <i class="bi bi-arrow-right-short"></i></p>
+
+                        </div>
+
+                        <!-- Right Side Text -->
+                        <div class="col-md-6">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <img src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/emergency-3.webp"
+                                        class="img-fluid rounded shadow-sm" alt="img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row margin-top">
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm custom-card">
+
+                                <div class="d-flex justify-content-start">
+                                    <div class=" rounded-circle shadow d-flex align-items-center justify-content-center"
+                                        style="width:90px; height:90px; background-color: #d6eef3;">
+                                        <i class="bi bi-heart-pulse fs-2 text-info"></i>
+                                    </div>
+                                </div>
+
+
+                                <h1>Cardiology</h1>
+                                <p class="fs-5">
+                                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+                                    fugit,
+                                    sed quia consequuntur magni dolores.
+                                </p>
+
+                                <div class="row text-center">
+                                    <div class="col-md-6">
+                                        <h1 class="text-info">15+</h1>
+                                        <p>SPECIALIST</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h1 class="text-info">500+</h1>
+                                        <p>PROCEDURES</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm custom-card">
+
+                                <div class="d-flex justify-content-start">
+                                    <div class=" rounded-circle shadow d-flex align-items-center justify-content-center"
+                                        style="width:90px; height:90px; background-color: #d6eef3;">
+                                        <i class="bi bi-heart-pulse fs-2 text-info"></i>
+                                    </div>
+                                </div>
+
+
+                                <h1>Neurology</h1>
+                                <p class="fs-5">
+                                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+                                    fugit,
+                                    sed quia consequuntur magni dolores.
+                                </p>
+
+                                <div class="row text-center">
+                                    <div class="col-md-6">
+                                        <h1 class="text-info">8+</h1>
+                                        <p>SPECIALIST</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h1 class="text-info">200+</h1>
+                                        <p>PROCEDURES</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm custom-card">
+
+                                <div class="d-flex justify-content-start">
+                                    <div class=" rounded-circle shadow d-flex align-items-center justify-content-center"
+                                        style="width:90px; height:90px; background-color: #d6eef3;">
+                                        <i class="bi bi-scissors fs-2 text-info"></i>
+                                    </div>
+                                </div>
+
+                                <h1>Surgery</h1>
+                                <p class="fs-5">
+                                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+                                    fugit,
+                                    sed quia consequuntur magni dolores.
+                                </p>
+
+                                <div class="row text-center">
+                                    <div class="col-md-6">
+                                        <h1 class="text-info">12+</h1>
+                                        <p>SURGENS</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h1 class="text-info">1000+</h1>
+                                        <p>OPERATIONS</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="p-4  bg-white rounded shadow-sm custom-card">
+
+                                <div class="d-flex justify-content-start">
+                                    <div class=" rounded-circle shadow d-flex align-items-center justify-content-center"
+                                        style="width:90px; height:90px; background-color: #d6eef3;">
+                                        <i class="bi bi-heart-pulse fs-2 text-info"></i>
+                                    </div>
+                                </div>
+
+                                <h1>Pediatrics</h1>
+                                <p class="fs-5">
+                                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+                                    fugit,
+                                    sed quia consequuntur magni dolores.
+                                </p>
+
+                                <div class="row text-center">
+                                    <div class="col-md-6">
+                                        <h1 class="text-info">10+</h1>
+                                        <p>SPECIALIST</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h1 class="text-info">2000+</h1>
+                                        <p>PROCEDURES</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="p-4  bg-white rounded shadow-sm custom-card">
+
+                                <div class="d-flex justify-content-start">
+                                    <div class=" rounded-circle shadow d-flex align-items-center justify-content-center"
+                                        style="width:90px; height:90px; background-color: #d6eef3;">
+                                        <i class="bi bi-heart-pulse fs-2 text-info"></i>
+                                    </div>
+                                </div>
+
+                                <h1>Ophthamology</h1>
+                                <p class="fs-5">
+                                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+                                    fugit,
+                                    sed quia consequuntur magni dolores.
+                                </p>
+
+                                <div class="row text-center">
+                                    <div class="col-md-6">
+                                        <h1 class="text-info">6+</h1>
+                                        <p>SPECIALIST</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h1 class="text-info">500+</h1>
+                                        <p>PROCEDURES</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <div class="p-4  bg-white rounded shadow-sm custom-card">
+
+                                <div class="d-flex justify-content-start">
+                                    <div class=" rounded-circle shadow d-flex align-items-center justify-content-center"
+                                        style="width:90px; height:90px; background-color: #d6eef3;">
+                                        <i class="bi bi-heart-pulse fs-2 text-info"></i>
+                                    </div>
+                                </div>
+
+                                <h1>Dermetologist</h1>
+                                <p class="fs-5">
+                                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+                                    fugit,
+                                    sed quia consequuntur magni dolores.
+                                </p>
+
+                                <div class="row text-center">
+                                    <div class="col-md-6">
+                                        <h1 class="text-info">10+</h1>
+                                        <p>SPECIALIST</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h1 class="text-info">1500+</h1>
+                                        <p>PROCEDURES</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!------------------------------------------carousel start--------------------------------------------------------->
+                <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+
+                        <!-- Slide 1 -->
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/pediatrics-4.webp"
+                                        class="d-block w-100" alt="Image 1">
+                                </div>
+                                <div class="col-md-4">
+                                    <img src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/laboratory-3.webp"
+                                        class="d-block w-100" alt="Image 2">
+                                </div>
+                                <div class="col-md-4">
+                                    <img src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/neurology-3.webp"
+                                        class="d-block w-100" alt="Image 3">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/orthopedics-1.webp"
+                                        class="d-block w-100" alt="Image 4">
+                                </div>
+                                <div class="col-md-4">
+                                    <img src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/emergency-4.webp"
+                                        class="d-block w-100" alt="Image 5">
+                                </div>
+                                <div class="col-md-4">
+                                    <img src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/laboratory-3.webp"
+                                        class="d-block w-100" alt="Image 6">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+
+                <!---------------------carousel end-------------------------->
+
+                <div class="container">
+                    <div class="row margin-top">
+                        <div class="col-md-12 text-center">
+                            <h1>Explore All Our Medical Departments</h1>
+                            <p class="fs-5">Et accusamus et iusto odio dignissimos ducimus qui blanditiis
+                            </p>
+                            <p class="fs-5"> praesentium voluptatum deleniti atque corrupti quos dolores.
+                            </p>
+                            <button type="button" class="btn btn-info text-light fs-5 border-radius "
+                                style="padding: 15px 50px 15px 50px;">View All Departments</button>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row margin-top">
+                        <div class="col-md-12 text-center">
+                            <h1>Featured Services</h1>
+
+                            <p>
+                                Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur
+                                velit
+                        </div>
+                    </div>
+
+                    <div class="row margin-top">
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm custom-card">
+
+                                <img style="border-radius: 15px 15px 0px 0px;"
+                                    src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/cardiology-2.webp "
+                                    alt="img" width="100%">
+
+                                <h1>Cardiology</h1>
+                                <p class="fs-5">
+                                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+                                    fugit,
+                                    sed quia consequuntur magni dolores.
+                                </p>
+                                <p class="fw-bold text-info"> Learn more <i class="bi bi-arrow-right"></i>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm custom-card">
+
+
+                                <img style="border-radius: 15px 15px 0px 0px;"
+                                    src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/neurology-3.webp"
+                                    alt="img" width="100%">
+
+                                <h1>Neurology</h1>
+                                <p class="fs-5">
+                                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+                                    fugit,
+                                    sed quia consequuntur magni dolores.
+                                </p>
+
+                                <p class="fw-bold text-info"> Learn more <i class="bi bi-arrow-right"></i>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <div class="p-4 bg-white rounded shadow-sm custom-card">
+
+                                <img style="border-radius: 15px 15px 0px 0px;"
+                                    src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/orthopedics-1.webp"
+                                    alt="img" width="100%">
+
+                                <h1>Surgery</h1>
+                                <p class="fs-5">
+                                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+                                    fugit,
+                                    sed quia consequuntur magni dolores.
+                                </p>
+
+                                <p class="fw-bold text-info"> Learn more <i class="bi bi-arrow-right"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="p-4  bg-white rounded shadow-sm custom-card">
+
+                                <img style="border-radius: 15px 15px 0px 0px;"
+                                    src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/pediatrics-4.webp"
+                                    alt="img" width="100%">
+
+                                <h1>Pediatrics</h1>
+                                <p class="fs-5">
+                                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+                                    fugit,
+                                    sed quia consequuntur magni dolores.
+                                </p>
+
+                                <p class="fw-bold text-info"> Learn more <i class="bi bi-arrow-right"></i>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="p-4  bg-white rounded shadow-sm custom-card">
+
+                                <img style="border-radius: 15px 15px 0px 0px;"
+                                    src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/oncology-2.webp "
+                                    alt="img" width="100%">
+
+                                <h1>Ophthamology</h1>
+                                <p class="fs-5">
+                                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+                                    fugit,
+                                    sed quia consequuntur magni dolores.
+                                </p>
+
+                                <p class="fw-bold text-info"> Learn more <i class="bi bi-arrow-right"></i>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4">
+                            <div class="p-4  bg-white rounded shadow-sm custom-card">
+
+                                <img style="border-radius: 15px 15px 0px 0px;"
+                                    src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/laboratory-3.webp "
+                                    alt="img" width="100%">
+
+                                <h1>Dermetologist</h1>
+                                <p class="fs-5">
+                                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
+                                    fugit,
+                                    sed quia consequuntur magni dolores.
+                                </p>
+                                <p class="fw-bold text-info"> Learn more <i class="bi bi-arrow-right"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row margin-top">
+                    <div class="col-md-12 text-center">
+                        <h3>Find A doctor</h3>
+
+                        <p class="fs-5">
+                            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur
+                            velit
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row margin-top">
+                    <div class="col-md-12 text-center">
+                        <h1>Discover Your Ideal Medical Specialist</h1>
+
+                        <p class="fs-5">
+                            Connect with our network of certified healthcare professionals across all
+                        </p>
+                        <p class="fs-5">medical disciplines</p>
+                    </div>
+                </div>
+
+                <div class="container mt-5">
+                    <div class="p-4 rounded-4 shadow bg-white">
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <label for="practitionerName" class="form-label">Practitioner
+                                        Name</label>
+                                    <input type="search" placeholder="🔍︎ Search By Name" class="form-control"
+                                        id="practitionerName">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="medicalSpecialty" class="form-label">Medical
+                                        Specialty</label>
+                                    <input type="text" placeholder="╋ Select Speciality" class="form-control"
+                                        id="medicalSpecialty">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="location" class="form-label">Location</label>
+                                    <input type="text" placeholder="📌 All Locations" class="form-control"
+                                        id="location">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-------------------------------------------------------------------------------------------------------------------------->
+
+                <script>
+                    $(document).ready(function () {
+                        $("#myinput").on("keyup", function () {
+                            var value = $(this).val().toLowerCase();
+                            $("#mydiv .card").filter(function () {
+                                // search inside doctor name and specialty only
+                                let name = $(this).find(".doctor-name").text().toLowerCase();
+                                let specialty = $(this).find("p.text-muted").text().toLowerCase();
+                                $(this).toggle(name.indexOf(value) > -1 || specialty.indexOf(value) > -1);
+                            });
+                        });
+                    });
+                </script>
+
+
+                <!-- Search Bar -->
+                <div class="container mt-4">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="myinput" placeholder="Search Doctors...">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cards Container -->
+                <div class="container mt-5" id="mydiv">
+                    <div class="row justify-content-center">
+
+                        <!-- Doctor Card 1 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card shadow-sm rounded-3 p-3">
+                                <div class="row g-0 align-items-center">
+                                    <div class="col-md-4 text-center">
+                                        <img src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/staff-1.webp"
+                                            class="img-fluid rounded-circle" alt="Doctor">
+                                    </div>
+                                    <div class="col-md-8 ps-3">
+                                        <h5 class="fw-bold mb-2 doctor-name">Dr. Robert Kim</h5>
+                                        <p class="mb-3 text-muted">Neurosurgeon</p>
+                                        <div class="d-flex mb-2">
+                                            <button class="btn btn-info btn-sm"
+                                                style="height: 20px; display: flex; align-items: center; justify-content: center;">MD
+                                                FACC</button>
+                                            <span class="ps-3 text-secondary">18 years</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span style="font-size: 20px; color: gold;">&#9733; &#9733; &#9733;
+                                            &#9733;
+                                            &#9733;</span>
+                                        <span class="fw-bold">4.9</span>
+                                        <span class="text-secondary" style="font-size: 12px;">(98
+                                            Patient)</span>
+                                        <div class="d-flex justify-content-center mt-3 gap-3">
+                                            <button type="button"
+                                                class="btn btn-outline-secondary w-50">Details</button>
+                                            <button type="button" class="btn btn-info text-white w-50">Consult</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Doctor Card 2 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card shadow-sm rounded-3 p-3">
+                                <div class="row g-0 align-items-center">
+                                    <div class="col-md-4 text-center">
+                                        <img src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/staff-3.webp"
+                                            class="img-fluid rounded-circle" alt="Doctor">
+                                    </div>
+                                    <div class="col-md-8 ps-3">
+                                        <h5 class="fw-bold mb-2 doctor-name">Dr. Alice Brown</h5>
+                                        <p class="mb-3 text-muted">Cardiologist</p>
+                                        <div class="d-flex mb-2">
+                                            <button class="btn btn-info btn-sm"
+                                                style="height: 20px; display: flex; align-items: center; justify-content: center;">MD
+                                                PHD</button>
+                                            <span class="ps-3 text-secondary">12 years</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span style="font-size: 20px; color: gold;">&#9733; &#9733; &#9733;
+                                            &#9733;
+                                            &#9734;</span>
+                                        <span class="fw-bold">4.7</span>
+                                        <span class="text-secondary" style="font-size: 12px;">(76
+                                            Patient)</span>
+                                        <div class="d-flex justify-content-center mt-3 gap-3">
+                                            <button type="button"
+                                                class="btn btn-outline-secondary w-50">Details</button>
+                                            <button type="button" class="btn btn-info text-white w-50">Consult</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Doctor Card 3 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card shadow-sm rounded-3 p-3">
+                                <div class="row g-0 align-items-center">
+                                    <div class="col-md-4 text-center">
+                                        <img src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/staff-5.webp"
+                                            class="img-fluid rounded-circle" alt="Doctor">
+                                    </div>
+                                    <div class="col-md-8 ps-3">
+                                        <h5 class="fw-bold mb-2 doctor-name">Dr. Sarah Thompson</h5>
+                                        <p class="mb-3 text-muted">Pediatric Specialist</p>
+                                        <div class="d-flex mb-2">
+                                            <button class="btn btn-info btn-sm"
+                                                style="height: 20px; display: flex; align-items: center; justify-content: center;">MD
+                                                FAAQ</button>
+                                            <span class="ps-3 text-secondary">10 years</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span style="font-size: 20px; color: gold;">&#9733; &#9733; &#9733;
+                                            &#9734;
+                                            &#9734;</span>
+                                        <span class="fw-bold">4.3</span>
+                                        <span class="text-secondary" style="font-size: 12px;">(45
+                                            Patient)</span>
+                                        <div class="d-flex justify-content-center mt-3 gap-3">
+                                            <button type="button"
+                                                class="btn btn-outline-secondary w-50">Details</button>
+                                            <button type="button" class="btn btn-info text-white w-50">Consult</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Doctor Card 4 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card shadow-sm rounded-3 p-3">
+                                <div class="row g-0 align-items-center">
+                                    <div class="col-md-4 text-center">
+                                        <img src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/staff-7.webp"
+                                            class="img-fluid rounded-circle" alt="Doctor">
+                                    </div>
+                                    <div class="col-md-8 ps-3">
+                                        <h5 class="fw-bold mb-2 doctor-name">Dr. Michael Rivera</h5>
+                                        <p class="mb-3 text-muted">Neurosurgeon</p>
+                                        <div class="d-flex mb-2">
+                                            <button class="btn btn-info btn-sm"
+                                                style="height: 20px; display: flex; align-items: center; justify-content: center;">MD
+                                                FAAOS</button>
+                                            <span class="ps-3 text-secondary">18 years</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span style="font-size: 20px; color: gold;">&#9733; &#9733; &#9733;
+                                            &#9733;
+                                            &#9733;</span>
+                                        <span class="fw-bold">4.9</span>
+                                        <span class="text-secondary" style="font-size: 12px;">(98
+                                            Patient)</span>
+                                        <div class="d-flex justify-content-center mt-3 gap-3">
+                                            <button type="button"
+                                                class="btn btn-outline-secondary w-50">Details</button>
+                                            <button type="button" class="btn btn-info text-white w-50">Consult</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Doctor Card 5 -->
+                        <div class="col-md-4 mb-4">
+                            <div class="card shadow-sm rounded-3 p-3">
+                                <div class="row g-0 align-items-center">
+                                    <div class="col-md-4 text-center">
+                                        <img src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/staff-9.webp"
+                                            class="img-fluid rounded-circle" alt="Doctor">
+                                    </div>
+                                    <div class="col-md-8 ps-3">
+                                        <h5 class="fw-bold mb-2 doctor-name">Dr. Lisa Garcia</h5>
+                                        <p class="mb-3 text-muted">Dermatologist</p>
+                                        <div class="d-flex mb-2">
+                                            <button class="btn btn-info btn-sm"
+                                                style="height: 20px; display: flex; align-items: center; justify-content: center;">MD
+                                                FAAD</button>
+                                            <span class="ps-3 text-secondary">15 years</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span style="font-size: 20px; color: gold;">&#9733; &#9733; &#9733;
+                                            &#9733;
+                                            &#9733;</span>
+                                        <span class="fw-bold">4.9</span>
+                                        <span class="text-secondary" style="font-size: 12px;">(98
+                                            Patient)</span>
+                                        <div class="d-flex justify-content-center mt-3 gap-3">
+                                            <button type="button"
+                                                class="btn btn-outline-secondary w-50">Details</button>
+                                            <button type="button" class="btn btn-info text-white w-50">Consult</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Doctor Card 6-->
+                        <div class="col-md-4 mb-4">
+                            <div class="card shadow-sm rounded-3 p-3">
+                                <div class="row g-0 align-items-center">
+                                    <div class="col-md-4 text-center">
+                                        <img src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/staff-12.webp"
+                                            class="img-fluid rounded-circle" alt="Doctor">
+                                    </div>
+                                    <div class="col-md-8 ps-3">
+                                        <h5 class="fw-bold mb-2 doctor-name">Dr. Daniel Wong</h5>
+                                        <p class="mb-3 text-muted">Oncology Expert</p>
+                                        <div class="d-flex mb-2">
+                                            <button class="btn btn-info btn-sm"
+                                                style="height: 20px; display: flex; align-items: center; justify-content: center;">MD
+                                                FASCO</button>
+                                            <span class="ps-3 text-secondary">24 years</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span style="font-size: 20px; color: gold;">&#9733; &#9733; &#9733;
+                                            &#9733;
+                                            &#9733;</span>
+                                        <span class="fw-bold">4.9</span>
+                                        <span class="text-secondary" style="font-size: 12px;">(98
+                                            Patient)</span>
+                                        <div class="d-flex justify-content-center mt-3 gap-3">
+                                            <button type="button"
+                                                class="btn btn-outline-secondary w-50">Details</button>
+                                            <button type="button" class="btn btn-info text-white w-50">Consult</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!----------------------------------------------------------------------------------------------------------------->
+
+                <!-----------------------------footer--------------------------------->
+                <div class="container">
+                    <div class="mt-5 text-center">
+                        <button type="button" class="btn btn-outline-info btn-lg"> Brouse Complete Directory
+                            > </button>
+                    </div>
+                </div>
+
+
+                <div class="container">
+                    <div class="row mt-5">
+
+                        <!-- Left Side Images -->
+                        <div class="col-md-6">
+                            <!-- Card -->
+                            <div class=" mb-4 bg-white">
+
+                                <h1>Exceptional Care for Your Health Journey</h1>
+                                <p class="fs-5">
+                                    Discover comprehensive healthcare services delivered with compassion and
+                                    expertise.
+                                    Our dedicated team is committed to providing personalized medical care
+                                    that puts you
+                                    first.
+                                </p>
+
+
+                            </div>
+
+                            <!-- Button-->
+                            <button class="btn btn-info btn-lg p-2 ps-3 pe-3">Schedule consultation</button>
+
+                            <span class="fw-bold text-info p-5"> Explore Services <i
+                                    class="bi bi-arrow-right-short"></i></span>
+
+                        </div>
+
+                        <!-- Right Side Text -->
+                        <div class="col-md-6">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <img src="https://bootstrapmade.com/content/demo/MediNest/assets/img/health/showcase-2.webp"
+                                        class="img-fluid rounded shadow-sm" alt="img">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!------------------------------>
+
+                <div class="container">
+                    <div class="row text-center margin-top">
+                        <div class="col-md-3">
+                            <p class="text-info fs-1">25+</p>
+                            <p class="text-secondary">Years Experience</p>
+                        </div>
+
+                        <div class="col-md-3">
+                            <p class="text-info fs-1">15k+</p>
+                            <p class="text-secondary">Happy Patients</p>
+                        </div>
+
+                        <div class="col-md-3">
+                            <p class="text-info fs-1">50+</p>
+                            <p class="text-secondary">Medical Experts</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="text-info fs-1">24/7</p>
+                            <p class="text-secondary">Emergency Care</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!------------------------------>
+
+
+                <div class="container">
+                    <div class="row margin-top footer-content">
+                        <div class="col-md-12 p-4 bg-white rounded shadow-sm custom-card">
+                            <div class="row">
+                                <div class="col-4">
+                                    <h4 class="fw-bold mb-5"> Medinest</h4>
+                                    <p>A108 Adam Street</p>
+
+                                    <p> New York, NY 535022</p>
+
+                                    <p>Phone: +1 5589 55488 55</p>
+
+                                    <p>Email: info@example.com</p>
+                                </div>
+
+                                <div class="col-2">
+                                    <p class="fw-bold"> Useful Links</p>
+                                    <p class="text-secondary">Home</p>
+                                    <p class="text-secondary">About us</p>
+                                    <p class="text-secondary">Services</p>
+                                    <p class="text-secondary">Terms of service</p>
+                                    <p class="text-secondary">Privacy policy</p>
+                                </div>
+
+                                <div class="col-2">
+                                    <p class="fw-bold"> Our Services</p>
+                                    <p class="text-secondary">Web Design</p>
+                                    <p class="text-secondary">Web Development</p>
+                                    <p class="text-secondary">Product Management</p>
+                                    <p class="text-secondary">Marketing</p>
+                                    <p class="text-secondary"> Graphic Designss</p>
+                                </div>
+
+                                <div class="col-2">
+                                    <p class="fw-bold"> Hic solutasetp</p>
+                                    <p class="text-secondary">Molestiae accusamus iure</p>
+                                    <p class="text-secondary"> Excepturi dignissimos</p>
+                                    <p class="text-secondary">Suscipit distinctio</p>
+                                    <p class="text-secondary">Dilecta</p>
+                                    <p class="text-secondary"> Sit quas consectetur</p>
+                                </div>
+
+                                <div class="col-2">
+                                    <p class="fw-bold"> Nobis illum</p>
+                                    <p class="text-secondary">Ipsam</p>
+                                    <p class="text-secondary">Laudantium dolorum</p>
+                                    <p class="text-secondary">Dinera</p>
+                                    <p class="text-secondary"> Trodelas</p>
+                                    <p class="text-secondary">Flexo</p>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+</body>
+
+</html>

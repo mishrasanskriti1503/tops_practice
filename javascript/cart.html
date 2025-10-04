@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>javascript</title>
+</head>
+
+<body>
+
+
+
+
+    <div align="center">
+        <button style="padding:10px 50px 10px 50px;" onclick="plus()"> + </button>
+        <h1 id="num"> 0 </h1>
+        <button style="padding:10px 50px 10px 50px;" onclick="minus()"> - </button>
+    </div>
+
+
+    <hr>
+
+    <script>
+        function plus() {
+            var num = document.getElementById('num').innerHTML;
+            num++;
+            if (num <= 10){
+            document.getElementById('num').innerHTML = num;
+            }
+
+        }
+
+        function minus() {
+            var num = document.getElementById('num').innerHTML;
+            if (num > 0){
+                num--;
+            document.getElementById('num').innerHTML = num;
+            }
+        }
+
+    </script>
+
+    <div align="center">
+        <button style="padding:10px 20px 10px 20px;" onclick="plus1()"> + </button>
+        <input type="text" id="number" value="0">
+        <button style="padding:10px 20px 10px 20px;" onclick="minus1()"> - </button>
+
+    </div>
+
+    <script>
+        function plus1() {
+            var number = document.getElementById('number').value;
+            if (number <=9) {
+                number++;
+                document.getElementById('number').value = number;
+            }
+        }
+
+        function minus1() {
+
+            var number = document.getElementById('number').value;
+            if (number > 0)
+            {
+                number--;
+                document.getElementById('number').value = number;
+            }
+        }
+
+        
+    </script>
+
+
+
+</body>
+
+</html>

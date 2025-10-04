@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Result</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+    <div style="width:50%; text-align:center; border:2px solid black ">
+        <h2>Marks</h2>
+
+        <form method="post">
+          <input type="number" id="english" placeholder="Enter English Marks" name="english" required min="0" max="100"><br><br>
+          <input type="number" id="hindi" placeholder="Enter Hindi Marks" name="hindi" required min="0" max="100"><br><br>
+          <input type="number" id="maths" placeholder="Enter Maths Marks" name="maths" required min="0" max="100"><br><br>
+          <input type="number" id="science" placeholder="Enter Science Marks" name="science" required min="0" max="100"><br><br>
+          <input type="number" id="sst" placeholder="Enter SST Marks" name="SST" required min="0" max="100"><br><br>
+          <button class="btn btn-primary" onclick="return result()">Submit</button>
+          
+        </form>
+
+        <h1 id='test1'></h1>
+        <h1 id='test2'></h1>
+        <h1 id='test3'></h1>
+    </div>
+
+    <script>
+
+      function result(){
+        var english = document.getElementById('english').value;
+        var hindi =document.getElementById('hindi').value;
+        var maths =document.getElementById('maths').value;
+        var science =document.getElementById('science').value;
+        var sst =document.getElementById('sst').value;
+
+        var total= +english + +hindi + +maths + +science + +sst;
+
+         document.getElementById('test1').innerHTML= "total is = " + total;
+
+         var per=(total*100)/500;
+
+         document.getElementById('test2').innerHTML= "per is =" + per +"%";
+        
+         if(per<=90)
+         {
+          document.getElementById('test3').innerHTML= "Grade=A++";
+         }
+
+         else if (per<=80)
+         {
+          document.getElementById('test3').innerHTML= "Grade=A+";
+         }
+         
+         else if (per<=70)
+         {
+          document.getElementById('test3').innerHTML= "Grade : A";
+         }
+         else if (per<=60)
+         {
+          document.getElementById('test3').innerHTML= "Grade : B";
+         }
+         else if (per<=50)
+         {
+          document.getElementById('test3').innerHTML= "Grade : C";
+         }
+         else if (per<=40)
+         {
+          document.getElementById('test3').innerHTML= "Grade : D";
+         }
+         else  (per>=40)
+         {
+          document.getElementById('test3').innerHTML = "Grade : <span style='color:red;'>Fail<span";
+         }
+         
+    
+         
+         return false;
+      }
+      
+    </script>
+
+
+      
+		
+  
+		
+		
+</body>
+</html>
