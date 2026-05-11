@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>javascript</title>
+</head>
+<body>
+    
+    <h1> Array</h1>
+    
+    <p> we have to use square bracket [ ] </p>
+    <p> index no ya position dena hota h</p>
+
+    <script>
+
+        let arr= [10,20,30,40]
+        for (let i=0;i<4;i++){
+                document.write('<br>'+ arr[i])
+        }
+
+        // Add from end
+        arr.push (55)
+        arr.push (70)
+        arr.push (25)
+        document.write('<br>'+arr)
+
+        // Remove from end
+
+        arr.pop()
+         document.write('<br>'+arr)
+
+        // Add from starting
+
+        arr.unshift (100)
+        arr.unshift (45)
+        arr.unshift (55)
+
+        document.write('<br>'+arr)
+
+        // remove from starting
+
+        arr.shift ()
+         document.write('<br>'+arr)
+
+
+        // splice ( we can add or remove element from position or index no)
+
+        arr.splice(3,0,45,76,32)
+             document.write('<br>'+arr)
+
+        arr.splice (4,2)
+            document.write('<br>'+arr)
+
+        // Slice ( we can get element by position ) last ka jo bhi position doge usko ek minus krke lena pdega kyuki index no 0 se start hota hai
+
+        let ans= arr.slice(3)
+        document.write('<br>'+ans)
+
+        ans= arr.slice(3,6)
+        document.write('<br>'+ans)
+
+         ans= arr.slice(-5)
+        document.write('<br>'+ans)
+
+         ans= arr.slice(-7,-3)
+        document.write('<br>'+ans)
+
+
+        
+       
+    </script>
+</body>
+</html>

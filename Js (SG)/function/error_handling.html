@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>javascript</title>
+</head>
+<body>
+    
+    <script>
+       let a=10
+       let b=5
+       try{
+        if (b>0){
+            document.write('<br>Division is'+ (a/b))
+        }
+        else {
+            throw 'Not divisible by zero'
+        }
+
+       }
+       catch(error){
+        document.write('error is : '+ error)
+
+       }
+       finally{
+        document.write('<br>Multiplication  is '+ a*b)
+
+       }
+
+        document.write('<br><hr>')
+
+        let age=(16)
+        try{
+            if(age<18){
+                throw 'Not Eligible for vote'
+            }
+        }
+
+        catch(e){
+              document.write('error is  : '+ e)
+        }
+
+        finally{
+              document.write('<br>Age criteria ia 18 & above , Please try again later')
+        }
+
+        document.write('<br><hr>')
+
+        let p=62
+        let q=41
+
+        try{
+            if (p+q<100){
+                throw 'fail'
+            }
+            else{
+                document.write('<br>pass')
+            }
+
+        }
+
+        catch (err){
+            document.write('<br> marks less than 100 : '+err)
+        }
+
+        finally{
+            document.write('<br>Marks obtained : '+ (p+q))
+        }
+    </script>
+</body>
+</html>

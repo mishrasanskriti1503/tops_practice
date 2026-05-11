@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>javascript</title>
+</head>
+
+<body>
+
+    <script>
+
+        let arr = [20, 30, 40, 50, 60]
+        // document.write('<br> array of 1 =' + arr[0])
+        // document.write('<br> array of 1 =' + arr[1])
+        // document.write('<br> array of 1 =' + arr[2])
+        // document.write('<br> array of 1 =' + arr[3])
+
+        for (let i = 0; i <= 5; i++) {
+            document.write('<br> ' + i + ' : ' + arr[i])
+        }
+
+        document.write('<br><br> <hr>')
+
+        document.write('<b>Push Function</b><br>')
+        document.write('(add somthing from the last position)<br>')
+
+        arr.push(67)
+        arr.push(87)
+        arr.push(37)
+        arr.push(55)
+        document.write('<br> ' + arr)
+
+        document.write('<br><br> <hr>')
+        document.write('<b>pop Function</b><br>')
+        document.write('(remove somthing from the last position)<br>')
+
+        arr.pop()
+        arr.pop()
+        arr.pop()
+        document.write('<br> ' + arr)
+
+        document.write('<br><br> <hr>')
+        document.write('<b>unshift</b><br>')
+        document.write('(add somthing from the first position)<br>')
+
+        arr.unshift(100)
+        arr.unshift(70)
+        document.write('<br> ' + arr)
+
+        document.write('<br><br> <hr>')
+        document.write('<b>shift</b><br>')
+        document.write('(remove somthing from the first position)<br>')
+        arr.shift()
+        arr.shift()
+        document.write('<br> ' + arr)
+
+        document.write('<br><br> <hr>')
+        document.write('<b>Splice</b><br>')
+        document.write('(add / remove somthing from  position wise)<br>')
+        arr.splice(3, 2)
+        document.write('<br>(remove) ' + arr)
+        arr.splice(2, 0, 56, 78, 91, 25)
+        document.write('<br> (add)' + arr)
+
+        document.write('<br><br> <hr>')
+        document.write('<b>Slice</b><br>')
+        document.write('(get somthing from  position wise)<br>')
+        let ans = arr.slice(3)
+        document.write('<br>' + ans)
+
+        ans = arr.slice(4, 7)
+        document.write('<br>' + ans)
+
+        ans = arr.slice(-4)
+        document.write('<br>' + ans)
+
+        ans = arr.slice(-7, -2)
+        document.write('<br>' + ans)
+
+        document.write('<br><br> <hr>')
+        document.write('<br><br> <hr>')
+        document.write('<br><br> <hr>')
+
+let a=[ 2,3,4,5,6,7,8,9,10,12];
+document.write('<br>' + a[4])
+
+for (let ab=0;ab<=9;ab++){
+  document.write('<br> ab =  ' + ab +a[ab])  
+}
+
+a.push(15);
+document.write('<br>' + a)
+
+a.pop();
+document.write('<br>' + a)
+
+a.unshift(0);
+document.write('<br>' + a)
+
+a.shift()
+document.write('<br>' + a)
+
+a.splice(3,5);
+document.write('<br>' + a)
+
+a.splice(2,0,6,8,9,10)
+document.write('<br>' + a)
+
+let abc= a.slice(3)
+document.write('<br>' + abc)
+
+abc=a.slice(3,6)
+document.write('<br>' + abc)
+
+abc=a.slice(-1)
+document.write('<br>' + abc)
+
+abc=a.slice(-5,-2)
+document.write('<br>' + abc)
+
+
+    </script>
+</body>
+
+</html>

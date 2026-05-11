@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>javascript</title>
+</head>
+<body>
+    
+    <script>
+       class emp{
+        // parameterized constructor
+        constructor(p,q){// special member function
+            document.write('constructor called..')
+            this.a=p
+            this.b=q
+        }
+        add(){// member function-normal function
+            document.write('<br> Addition is +'(this.a+this.b))
+        }
+       }
+
+       let obj=new emp(11,22)
+       obj.add()
+    </script>
+</body>
+</html>

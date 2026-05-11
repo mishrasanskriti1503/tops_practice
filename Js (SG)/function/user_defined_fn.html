@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>javascript</title>
+</head>
+<body>
+    
+    <script>
+       //user defined function
+       //1) take nothing return nothing
+       function add(){
+            let a=20
+            let b=30
+            document.write('<br> Addition is '+(a+b))
+       }
+
+       // 2) take something return nothing 
+       function mult(a,b){
+            document.write('<br> multiplication is '+(a*b))
+       }
+
+       //-----------
+
+       let p=prompt('enter no : 1')
+       let q=prompt('enter no : 2')
+
+       // 3) take nothing return something
+
+        function area(){
+            const pi=3.14
+            let r=2
+            return pi*r**2
+        }
+
+    //4) take  something return something
+        
+    function cube(a){
+        return a**3
+    }
+
+
+
+       add()
+       //mult(20,30)
+       mult(p,q)
+
+       
+        // let ans=area()
+       //  document.write('<br> Area of Circle is:' +ans) //(ek method) 
+        document.write('<br> Area of circle is' +area())
+        document.write('<br> cube is :' +cube(3))
+    </script>
+</body>
+</html>

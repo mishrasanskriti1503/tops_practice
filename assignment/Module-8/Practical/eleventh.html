@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Timing Functions</title>
+</head>
+<body>
+
+<h3>Digital Clock</h3>
+<p id="clock"></p>
+
+<script>
+
+// ----------- Task 1: Change Background after 5 seconds -----------
+setTimeout(function() {
+    document.body.style.backgroundColor = "lightblue";
+}, 5000);
+
+
+// ----------- Task 2: Digital Clock using setInterval -----------
+function showTime() {
+    let now = new Date();
+    
+    let h = now.getHours();
+    let m = now.getMinutes();
+    let s = now.getSeconds();
+
+    // Format (add 0 if needed)
+    if (h < 10) h = "0" + h;
+    if (m < 10) m = "0" + m;
+    if (s < 10) s = "0" + s;
+
+    let time = h + ":" + m + ":" + s;
+
+    document.getElementById("clock").innerHTML = time;
+}
+
+// Update every 1 second
+setInterval(showTime, 1000);
+
+</script>
+
+</body>
+</html>

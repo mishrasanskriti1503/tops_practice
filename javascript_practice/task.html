@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let no = 1729
+        let sum = 0
+        let rev = 0
+        let n = no
+
+        while (no > 0) {
+            let r = no % 10
+            no = Math.floor(no / 10)
+            sum = sum + r
+
+        }
+
+        while (n > 0) {
+            let r = n % 10
+            no = Math.floor(n / 10)
+            rev = (rev * 10) + r
+        }
+
+        document.write(' <br> sum of digits is :' + sum)
+        document.write('<br> Reverse no is :' + rev)
+
+    </script>
+</body>
+
+</html>

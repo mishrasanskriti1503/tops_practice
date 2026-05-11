@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Try-Catch Example</title>
+</head>
+<body>
+
+<script>
+
+let num1 = 10;
+let num2 = 0;
+
+try {
+    if (num2 === 0) {
+        throw "Error: Cannot divide by zero!";
+    }
+
+    let result = num1 / num2;
+    document.write("Result: " + result);
+
+} catch (error) {
+    document.write(error);
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Object Example</title>
+</head>
+<body>
+
+<script>
+
+// Create car object
+let car = {
+    brand: "Toyota",
+    model: "Camry",
+    year: 2020
+};
+
+// Access and print brand & model
+document.write("<h3>Car Details</h3>");
+document.write("Brand: " + car.brand + "<br>");
+document.write("Model: " + car.model + "<br>");
+
+// Update year
+car.year = 2023;
+
+// Add new property color
+car.color = "Black";
+
+// Display updated object
+document.write("<br>Updated Year: " + car.year + "<br>");
+document.write("Color: " + car.color);
+
+</script>
+
+</body>
+</html>

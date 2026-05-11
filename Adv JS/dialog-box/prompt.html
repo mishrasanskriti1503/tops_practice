@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialogbox</title>r
+</head>
+<body>
+
+    <input type="submit" value="Login" onclick="prompt_fun()">
+
+<script>
+    function prompt_fun(){
+        var passcode=prompt("enter your Password");
+        if (passcode==12345)
+    {
+        alert("Login Success");
+        window.location="confirm.html";
+    }
+/
+    else
+    {
+        alert("please Enter correct Password");
+    }
+    }
+</script>
+
+    </body>
+</html>

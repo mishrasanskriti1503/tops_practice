@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Conditions Program</title>
+</head>
+<body>
+
+<script>
+// ----------- Question 1: Positive, Negative, Zero -----------
+let num = -5;  // Change value to test
+
+document.write("<h3>Check Number</h3>");
+
+if (num > 0) {
+    document.write("The number is Positive<br><br>");
+} else if (num < 0) {
+    document.write("The number is Negative<br><br>");
+} else {
+    document.write("The number is Zero<br><br>");
+}
+
+
+// ----------- Question 2: Day of Week using Switch -----------
+let day = 3;  // Change value (1-7)
+
+document.write("<h3>Day of the Week</h3>");
+
+switch(day) {
+    case 1:
+        document.write("Monday");
+        break;
+    case 2:
+        document.write("Tuesday");
+        break;
+    case 3:
+        document.write("Wednesday");
+        break;
+    case 4:
+        document.write("Thursday");
+        break;
+    case 5:
+        document.write("Friday");
+        break;
+    case 6:
+        document.write("Saturday");
+        break;
+    case 7:
+        document.write("Sunday");
+        break;
+    default:
+        document.write("Invalid Input");
+}
+
+</script>
+
+</body>
+</html>

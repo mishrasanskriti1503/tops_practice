@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loops Example</title>
+</head>
+<body>
+
+<script>
+
+// ----------- Task 1: For Loop (1 to 10) -----------
+document.write("<h3>Task 1: Numbers from 1 to 10</h3>");
+
+for (let i = 1; i <= 10; i++) {
+    document.write(i + "<br>");
+}
+
+
+// ----------- Task 2: While Loop (Sum of even numbers 1 to 20) -----------
+document.write("<h3>Task 2: Sum of Even Numbers (1 to 20)</h3>");
+
+let i = 1;
+let sum = 0;
+
+while (i <= 20) {
+    if (i % 2 == 0) {
+        sum += i;
+    }
+    i++;
+}
+
+document.write("Sum = " + sum + "<br>");
+
+
+// ----------- Task 3: Do-While Loop (Input > 10) -----------
+document.write("<h3>Task 3: Enter Number Greater than 10</h3>");
+
+let num;
+
+do {
+    num = prompt("Enter a number greater than 10:");
+} while (num <= 10);
+
+document.write("You entered: " + num);
+
+</script>
+
+</body>
+</html>

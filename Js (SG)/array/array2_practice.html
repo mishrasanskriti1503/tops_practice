@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>javascript</title>
+</head>
+
+<body>
+    <h2> Sort & Reverse ( )</h2>
+    <script>
+
+        let a = [19, 25, 67, 89, 100, 99, 55]
+        document.write('<br>' + a.sort((p, q) => {
+            return p - q
+        }))
+        document.write('<br>' + a.reverse())
+
+        //-------------------------------------------------
+
+        let b = [26, 45, 34, 78, 99, 45, 67]
+        document.write('<br><br>' + b.sort((a, b) => {
+            return b - a
+        }))
+
+        document.write('<br>' + b.reverse())
+
+        //-----------------------------------------------------------
+
+        document.write('<br><hr>')
+        document.write('<br><h2> Include ( )</h2>')
+        let ab = a.includes(55);
+        document.write('<br>' + ab)
+        ab = a.includes(45)
+        document.write('<br>' + ab)
+
+        //---------------------------------------------------------------
+        ab = b.includes(99)
+        document.write('<br>' + ab)
+
+        //--------------------------------------------------------------
+
+        document.write('<br><hr>')
+        document.write('<br><h2> For In & For off Loop </h2>')
+        document.write('<br><p> <b>for in</b> gives the key pair value i.e index + value<span style="color:red"> Object ke liye recommended</span></p>')
+        document.write('<p> <b>for of</b> gives only value <span style="color:red"> Array ke liye recommended</span></p>')
+        for(var x in a){
+            document.write('<br>'+ x+(a[x]))
+        }
+
+         for(var x of a){
+            document.write('<br>'+ x)
+        }
+//----------------------------------------------------------------
+   
+ document.write('<br><hr>')
+        document.write('<br><h2> Map ( ) </h2>')
+        document.write('<br><p> it makes a copy of array , it doesnot change the original array</p>')
+
+        let arr=[11,45,63,24,55];
+       let newarr= arr.map((i,index)=>{
+            return i*2
+        })
+
+        document.write('<br>'+ newarr)
+
+         document.write('<br><hr>')
+        document.write('<br><h2> filter ( ) </h2>')
+
+        let arr2=[1,2,3,4,5,6,7,8];
+        let newarr2= arr2.filter(function(val){
+            if(val>=4) return true;
+        })
+         document.write('<br>'+ newarr2)
+
+    </script>
+</body>
+
+</html>

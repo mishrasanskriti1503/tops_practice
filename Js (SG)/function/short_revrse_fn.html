@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>javascript</title>
+</head>
+
+<body>
+
+    <h2> Short & Reverse Function</h2>
+
+    <script>
+
+        // let a= [ "xct", "abc", "jkl"]
+
+        let a = [67, 7, 90, 100, 12, 100]
+
+        //Compare Function
+
+        //document.write('<br>'+a.sort())
+
+        document.write('<br>' + a.sort((a, b) => {
+            return a - b//67-7=60   67-90==-30
+        }))
+
+        document.write('<br>' + a.reverse())
+
+        let ans = a.includes(100)
+        // searching and return a boolean value + true / false
+        document.write('<br>' + ans)
+
+
+
+
+
+        /* for (var x in a) {
+             console.log(a[x]);
+         }*/
+
+        for (var x of a) {
+            // console.log([x]);
+        }
+
+        document.write('<br>' + res)
+        //searching & return only single value
+        res = a.find((i, index) => {
+            return i == 100
+        })
+
+        console.log(res);
+        //searching & return array
+        res = a.filter((I, index) => {
+            return i == 100
+        })
+        console.log(res);
+
+    </script>
+
+    <h2> Map function</h2>
+
+    <script>
+        let res = a.map((i, index) => {
+            returnI * 2
+        })
+
+    </script>
+</body>
+
+</html>

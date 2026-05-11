@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>javascript</title>
+</head>
+
+<body>
+    <h2> Object {}</h2>
+    <script>
+        //object=key-value pair
+        let arr = {
+            "id": 101,
+            "name": "test",
+            "age": 25,
+            "salary": 25000,
+            "dispData": function () {
+                return this.name + "---" + this.age
+            },
+
+            //getter & setter Method
+            get getsalary() {
+                return this.salary
+            },
+
+            set setsalary(n) {
+                this.salary = n
+            }
+        }
+
+        arr.Lastname='XYZ'// extra data add liya 
+        /* document.write('<br> Id is : '+arr.id)
+         document.write('<br> Name is : '+arr['name'])
+         for(var x in arr){
+          document.write(x +'is :' +arr[x]+'<br>')
+         }*/
+
+        document.write('<br> Name  & age is ' + arr.dispData())
+        document.write('<br> current salary is ' + arr.getsalary)
+        arr.setsalary = 55000
+        document.write('<br> Updated Salary is ' + arr.salary)
+        document.write('<br> Updated Salary is ' + arr.getsalary)
+        document.write('<br> Last Name is ' + arr.Lastname)
+        delete arr.salary // delete keyword se data delete kiya 
+        document.write('<br> Updated Salary is ' + arr.salary)
+
+        // so object me hum data add, delete and update sab kr sakte h
+
+
+    </script>
+</body>
+
+</html>

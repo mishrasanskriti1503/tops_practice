@@ -1,0 +1,21 @@
+{
+    "categories":[
+        {
+            "id":1,
+            "name":"Fruits"
+        },
+        {
+            "id":2,
+            "name":"Vegitables"
+        },
+        {
+            "id":3,
+            "name":"Bread"
+        },
+        {
+            "id":4,
+            "name":"Meat"
+        }
+
+    ]
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   <div id="demo"> Hii</div>
+   <button onclick="change()"> Change </button>
+
+   <div id="demo1">Test</div>
+   <button id="test">Change2</button>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" 
+    integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script>
+   
+   function change(){
+   $('#demo').html('Hello')
+   $('#demo').css('color', 'red')
+}
+
+$('#btn1').click (function(){
+$('#demo1').text('<b> TEXT <b>')
+$('#demo1').css('color', 'blue')
+})
+    </script>
+</body>
+</html>

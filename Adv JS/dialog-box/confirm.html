@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+
+<body>
+
+    <input type="submit" value="Next" onclick="data_detete()">
+    <script>
+
+        function data_detete() {
+            var sure = confirm("Are you sure you want to Delete");
+
+            if (sure == true) {
+                alert('deleted')
+                window.location = "dialogbox.html";
+            }
+
+            else {
+                alert('task failed');
+            }
+        }
+    </script>
+
+    <input type="submit" value="logout" onclick="logout()">
+
+    <script>
+        function logout() {
+            var value = confirm("Are you sure You want to Logout");
+            if (value == true) 
+            {
+                alert("Successfully Logout ");
+                window.location = "dialogbox.html";
+            }
+            else {
+                alert("logout failed")
+
+            }
+        }
+    </script>
+
+    
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <script>
+        //Js me function ko multiple arguments dene ke liye
+
+        function triple_dots() {
+            for (var i = 0; i < arguments.length; i++) {
+                document.write(arguments[i] + "<br><br>");
+            }
+        }
+
+        triple_dots(1, 3, 5, 7, 2, 6, 89, 2, 4, 6, 8, 9, 5);
+    </script>
+
+    <script>
+        function multi_arg() {
+            for (var i = 0; i < arguments.length; i++) {
+                document.write(arguments[i] + "<br>");
+            }
+        }
+
+        multi_arg(3, 4, 5, 6, 7, 8, 9);
+
+    </script>
+
+
+<!--------------->
+<script>
+
+ function data (a,b,c,d)
+    {
+        document.write (a+ "<br>" +b+ "<br>" +c+ "<br>" +d +"<br>" );
+    }
+    data(1,2,3,4);
+
+</script>
+
+
+<script>
+    function demo(a,b,c,d,e,f)
+    {
+        document.write( a+"<br>"+b+"<br>"+c+"<br>"+d+"<br>"+e+"<br>"+f+"<br>")
+    }
+    demo("kriti","Tushar","Udit","Divya","Satish","Seema");
+</script>
+
+<!--------------------------------------------->
+
+<script>
+    function rest1(...abc)
+    {
+        for(var i=0; i <abc.length; i++)
+    {
+        document.write(abc[i]+"<br>")
+    }
+    }
+
+    rest1(2,3,4,5,67,7,88,4,6,8,8,9,3,4);
+</script>
+
+<script>
+    function rest2(...kriti)
+    {
+        for(var i=0; i<kriti.length;i++)
+    {
+        document.write(kriti[i]+"<br>")
+    }
+    }
+
+    rest2("tushar", "udit" , "divya" , "namo");
+</script>
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<h2>
+    fixed parameters
+</h2>
+
+<script>
+    function ex_1 (a,b,c,d,e)
+    {
+        document.write(a+"<br>"+b+"<br>"+c+"<br>"+d+"<br>"+e+"<br>")
+    }
+    ex_1("one","Two","Three","Four","Five");
+</script>
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<h2> Argument</h2>
+
+<script>
+    function ex_2()
+    {
+        for(var i=0; i<arguments.length;i++)
+    {
+        document.write(arguments[i]+"<br>");
+    }
+    }
+
+    ex_2(1,2,3,4,5,6,7,8);
+
+</script>
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<h2>Rest Parameter</h2>
+
+<script>
+    function ex_3(...adc)
+    {
+        for(var i=0; i<adc.length;i++)
+    {
+        document.write(adc[i]+"<br>");
+    }
+    }
+
+    ex_3(6,7,8,9,0,3,5,6,8,9,0);
+
+</script>
+</body>
+</html>
