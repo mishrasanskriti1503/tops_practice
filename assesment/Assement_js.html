@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Registration System</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #f5f5f5;
+        }
+
+        .main-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        .message-box {
+            display: none;
+        }
+
+        .no-data {
+            display: none;
+            color: red;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="main-box">
+
+            <h2 class="text-center mb-4">
+                Guest Registration Form
+            </h2>
+
+            <!-- Message Box -->
+            <div id="messageBox" class="alert message-box"></div>
+
+            <!-- Form -->
+            <form id="guestForm">
+
+                <div class="row">
+
+                    <!-- Name -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Full Name</label>
+
+                        <input type="text" id="fullname" class="form-control">
+
+                        <span class="error" id="fullnameError"></span>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Phone Number</label>
+
+                        <input type="text" id="phone" class="form-control">
+
+                        <span class="error" id="phoneError"></span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Email Address</label>
+
+                        <input type="email" id="email" class="form-control">
+
+                        <span class="error" id="emailError"></span>
+                    </div>
+
+                    <!-- Aadhar -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Aadhar Card Number</label>
+
+                        <input type="text" id="aadhar" class="form-control">
+
+                        <span class="error" id="aadharError"></span>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="col-12 mb-3">
+                        <label class="form-label">Address</label>
+
+                        <textarea id="address" class="form-control"></textarea>
+
+                        <span class="error" id="addressError"></span>
+                    </div>
+
+                    <!-- Checkin -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Check In Date</label>
+
+                        <input type="date" id="checkin" class="form-control">
+
+                        <span class="error" id="checkinError"></span>
+                    </div>
+
+                    <!-- Checkout -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Check Out Date</label>
+
+                        <input type="date" id="checkout" class="form-control">
+
+                        <span class="error" id="checkoutError"></span>
+                    </div>
+
+                    <!-- Adult -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">No of Adult</label>
+
+                        <input type="number" id="adult" class="form-control">
+
+                        <span class="error" id="adultError"></span>
+                    </div>
+
+                    <!-- Purpose -->
+                    <div class="col-12 mb-3">
+                        <label class="form-label">Purpose of Visit</label>
+
+                        <textarea id="purpose" class="form-control"></textarea>
+
+                        <span class="error" id="purposeError"></span>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn btn-primary">
+                            Submit
+                        </button>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+        <!-- Table Section -->
+        <div class="main-box">
+
+            <h2 class="text-center mb-4">
+                Submission Viewer
+            </h2>
+
+            <!-- Search -->
+            <div class="mb-3">
+                <input type="text" id="searchInput" class="form-control"
+                    placeholder="Search By Name or Date">
+            </div>
+
+            <!-- Table -->
+            <div class="table-responsive">
+
+                <table class="table table-bordered table-striped">
+
+                    <thead class="table-dark">
+
+                        <tr>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Aadhar</th>
+                            <th>Check In</th>
+                            <th>Check Out</th>
+                            <th>Adult</th>
+                            <th>Purpose</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="tableBody"></tbody>
+
+                </table>
+
+            </div>
+
+            <p id="noData" class="no-data">
+                No Data Found
+            </p>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        // =========================
+        // Submission Viewer Class
+        // =========================
+
+        class SubmissionViewer {
+
+            constructor() {
+
+                this.tableBody =
+                    document.getElementById("tableBody");
+
+                this.noData =
+                    document.getElementById("noData");
+
+            }
+
+            getData() {
+
+                return JSON.parse(
+                    localStorage.getItem("customers")
+                ) || [];
+
+            }
+
+            generateTable(data) {
+
+                this.tableBody.innerHTML = "";
+
+                if (data.length === 0) {
+
+                    this.noData.style.display = "block";
+
+                    return;
+                }
+
+                this.noData.style.display = "none";
+
+                data.forEach((item) => {
+
+                    let row = `
+
+                    <tr>
+
+                        <td>${item.fullname}</td>
+
+                        <td>${item.phone}</td>
+
+                        <td>${item.email}</td>
+
+                        <td>${item.aadhar}</td>
+
+                        <td>${item.checkin}</td>
+
+                        <td>${item.checkout}</td>
+
+                        <td>${item.adult}</td>
+
+                        <td>${item.purpose}</td>
+
+                    </tr>
+
+                    `;
+
+                    this.tableBody.innerHTML += row;
+
+                });
+
+            }
+
+            loadSubmissions() {
+
+                let data = this.getData();
+
+                this.generateTable(data);
+
+            }
+
+            searchData(value) {
+
+                let text =
+                    value.toLowerCase();
+
+                let data =
+                    this.getData();
+
+                let filteredData =
+                    data.filter((item) => {
+
+                        return (
+
+                            item.fullname
+                                .toLowerCase()
+                                .includes(text)
+
+                            ||
+
+                            item.checkin
+                                .includes(text)
+
+                            ||
+
+                            item.checkout
+                                .includes(text)
+
+                        );
+
+                    });
+
+                this.generateTable(filteredData);
+
+            }
+
+        }
+
+        // =========================
+        // Customer Form Handler
+        // =========================
+
+        class CustomerFormHandler {
+
+            constructor(viewer) {
+
+                this.form =
+                    document.getElementById("guestForm");
+
+                this.viewer = viewer;
+
+                // Event Delegation
+                this.form.addEventListener("input", (e) => {
+                    this.realTimeValidation(e);
+                });
+
+                this.form.addEventListener("blur", (e) => {
+                    this.realTimeValidation(e);
+                }, true);
+
+                this.form.addEventListener("submit", (e) => {
+
+                    e.preventDefault();
+
+                    if (this.validateForm()) {
+
+                        this.saveToLocalStorage();
+
+                        this.clearForm();
+
+                        this.viewer.loadSubmissions();
+
+                        this.showMessage(
+                            "Data Saved Successfully",
+                            "success"
+                        );
+
+                    } else {
+
+                        this.showMessage(
+                            "Please Fix Errors",
+                            "danger"
+                        );
+
+                    }
+
+                });
+
+            }
+
+            // Message Box
+            showMessage(message, type) {
+
+                const box =
+                    document.getElementById("messageBox");
+
+                box.className =
+                    `alert alert-${type} message-box`;
+
+                box.innerHTML = message;
+
+                box.style.display = "block";
+
+                setTimeout(() => {
+
+                    box.style.display = "none";
+
+                }, 3000);
+
+            }
+
+            // Set Error
+            setError(id, message) {
+
+                document.getElementById(id)
+                    .innerHTML = message;
+
+            }
+
+            // Clear Error
+            clearError(id) {
+
+                document.getElementById(id)
+                    .innerHTML = "";
+
+            }
+
+            // Real Time Validation
+            realTimeValidation(e) {
+
+                let field =
+                    e.target.id;
+
+                let value =
+                    e.target.value.trim();
+
+                switch (field) {
+
+                    case "fullname":
+
+                        if (value.length < 3) {
+
+                            this.setError(
+                                "fullnameError",
+                                "Minimum 3 characters required"
+                            );
+
+                        } else {
+
+                            this.clearError("fullnameError");
+
+                        }
+
+                        break;
+
+                    case "phone":
+
+                        if (!/^[0-9]{10}$/.test(value)) {
+
+                            this.setError(
+                                "phoneError",
+                                "Phone must be 10 digits"
+                            );
+
+                        } else {
+
+                            this.clearError("phoneError");
+
+                        }
+
+                        break;
+
+                    case "email":
+
+                        let emailPattern =
+                            /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+                        if (!emailPattern.test(value)) {
+
+                            this.setError(
+                                "emailError",
+                                "Invalid email"
+                            );
+
+                        } else {
+
+                            this.clearError("emailError");
+
+                        }
+
+                        break;
+
+                    case "address":
+
+                        if (value === "") {
+
+                            this.setError(
+                                "addressError",
+                                "Address required"
+                            );
+
+                        } else {
+
+                            this.clearError("addressError");
+
+                        }
+
+                        break;
+
+                    case "aadhar":
+
+                        if (!/^[0-9]{12}$/.test(value)) {
+
+                            this.setError(
+                                "aadharError",
+                                "Aadhar must be 12 digits"
+                            );
+
+                        } else {
+
+                            this.clearError("aadharError");
+
+                        }
+
+                        break;
+
+                    case "checkin":
+
+                        let today =
+                            new Date()
+                                .toISOString()
+                                .split("T")[0];
+
+                        if (value <= today) {
+
+                            this.setError(
+                                "checkinError",
+                                "Future date required"
+                            );
+
+                        } else {
+
+                            this.clearError("checkinError");
+
+                        }
+
+                        break;
+
+                    case "checkout":
+
+                        let today2 =
+                            new Date()
+                                .toISOString()
+                                .split("T")[0];
+
+                        if (value <= today2) {
+
+                            this.setError(
+                                "checkoutError",
+                                "Future date required"
+                            );
+
+                        } else {
+
+                            this.clearError("checkoutError");
+
+                        }
+
+                        break;
+
+                    case "adult":
+
+                        if (value === "" || value <= 0) {
+
+                            this.setError(
+                                "adultError",
+                                "Enter valid number"
+                            );
+
+                        } else {
+
+                            this.clearError("adultError");
+
+                        }
+
+                        break;
+
+                    case "purpose":
+
+                        if (value === "") {
+
+                            this.setError(
+                                "purposeError",
+                                "Purpose required"
+                            );
+
+                        } else {
+
+                            this.clearError("purposeError");
+
+                        }
+
+                        break;
+
+                }
+
+            }
+
+            // Validate Form
+            validateForm() {
+
+                let inputs =
+                    this.form.querySelectorAll(
+                        "input, textarea"
+                    );
+
+                inputs.forEach((input) => {
+
+                    this.realTimeValidation({
+                        target: input
+                    });
+
+                });
+
+                let errors =
+                    document.querySelectorAll(".error");
+
+                for (let error of errors) {
+
+                    if (error.innerHTML !== "") {
+
+                        return false;
+
+                    }
+
+                }
+
+                return true;
+
+            }
+
+            // Save Data
+            saveToLocalStorage() {
+
+                let customer = {
+
+                    fullname:
+                        document.getElementById("fullname").value,
+
+                    phone:
+                        document.getElementById("phone").value,
+
+                    email:
+                        document.getElementById("email").value,
+
+                    address:
+                        document.getElementById("address").value,
+
+                    aadhar:
+                        document.getElementById("aadhar").value,
+
+                    checkin:
+                        document.getElementById("checkin").value,
+
+                    checkout:
+                        document.getElementById("checkout").value,
+
+                    adult:
+                        document.getElementById("adult").value,
+
+                    purpose:
+                        document.getElementById("purpose").value
+
+                };
+
+                let oldData =
+                    JSON.parse(
+                        localStorage.getItem("customers")
+                    ) || [];
+
+                oldData.push(customer);
+
+                localStorage.setItem(
+                    "customers",
+                    JSON.stringify(oldData)
+                );
+
+            }
+
+            // Clear Form
+            clearForm() {
+
+                this.form.reset();
+
+                document
+                    .querySelectorAll(".error")
+                    .forEach((item) => {
+
+                        item.innerHTML = "";
+
+                    });
+
+            }
+
+        }
+
+        // =========================
+        // Objects
+        // =========================
+
+        const viewer =
+            new SubmissionViewer();
+
+        viewer.loadSubmissions();
+
+        const formHandler =
+            new CustomerFormHandler(viewer);
+
+        // Search Event
+        document
+            .getElementById("searchInput")
+            .addEventListener("input", (e) => {
+
+                viewer.searchData(e.target.value);
+
+            });
+
+    </script>
+
+</body>
+
+</html>
