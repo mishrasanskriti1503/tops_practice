@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section B – Creator Profile Link Manager</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #f5f5f5;
+    }
+
+    h1 { color: #333; font-size: 1.4rem; border-bottom: 2px solid #6c63ff; padding-bottom: 8px; }
+    h2 { color: #6c63ff; font-size: 1rem; margin-top: 30px; }
+
+    /* ── Task 1: Input Form ── */
+    .form-section {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
+    }
+
+    .form-section input {
+      display: block;
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      border: 1.5px solid #ccc;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+
+    .form-section input:focus {
+      outline: none;
+      border-color: #6c63ff;
+    }
+
+    /* Task 2: error message styling */
+    #urlError {
+      display: none;
+      color: red;
+      font-size: 0.82rem;
+      margin-top: -6px;
+      margin-bottom: 8px;
+    }
+
+    .btn-submit {
+      background: #6c63ff;
+      color: #fff;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+
+    .btn-submit:hover { background: #574fd6; }
+
+    /* ── Task 3: Profile Preview area ── */
+    .preview-section {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    #linksList {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    /* Each rendered link (Task 3) */
+    .link-entry {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f0eeff;
+      border: 1px solid #d0caff;
+      border-radius: 6px;
+      padding: 10px 14px;
+    }
+
+    /* Task 3: clickable button opening in new tab */
+    .link-entry a {
+      text-decoration: none;
+      color: #6c63ff;
+      font-weight: bold;
+      font-size: 0.92rem;
+    }
+
+    .link-entry a:hover { text-decoration: underline; }
+
+    .link-entry small {
+      display: block;
+      color: #888;
+      font-size: 0.75rem;
+      margin-top: 2px;
+    }
+
+    /* Task 5: Remove button */
+    .btn-remove {
+      background: #fff0f0;
+      color: #e53935;
+      border: 1px solid #ffaaaa;
+      border-radius: 5px;
+      padding: 5px 12px;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+
+    .btn-remove:hover { background: #ffe0e0; }
+
+    .empty-msg {
+      color: #aaa;
+      font-size: 0.88rem;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Section B – Creator Profile Link Manager</h1>
+
+  <!-- ══════════════════════════════════════════════
+       TASK 1: Link Object & Input Form
+       Captures Title and URL, stores as {title, url}
+       ══════════════════════════════════════════════ -->
+  <h2>Task 1 &amp; 2 – Add a Link (with URL Validation)</h2>
+  <div class="form-section">
+
+    <input type="text" id="titleInput" placeholder="Link Title (e.g. YouTube)" />
+
+    <input type="text" id="urlInput" placeholder="URL (must start with https://)" />
+
+    <!-- TASK 2: Red error message shown if URL is invalid -->
+    <p id="urlError">⚠️ URL must start with https://</p>
+
+    <button class="btn-submit" onclick="addLink()">Add Link</button>
+
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       TASK 3: Dynamic Rendering — Profile Preview
+       Each link is a clickable button opening in new tab
+       ══════════════════════════════════════════════ -->
+  <h2>Task 3 – Profile Preview</h2>
+  <div class="preview-section">
+    <!-- Event delegation listener is on this container (Task 5) -->
+    <div id="linksList">
+      <p class="empty-msg">No links added yet.</p>
+    </div>
+  </div>
+
+
+  <script>
+
+    // ══════════════════════════════════════════════
+    // TASK 1: Array to store link objects {title, url}
+    // ══════════════════════════════════════════════
+    let links = [];
+
+
+    // ══════════════════════════════════════════════
+    // TASK 4: Load from localStorage on page load
+    // JSON.parse converts the stored string back to an array
+    // ══════════════════════════════════════════════
+    function loadFromStorage() {
+      try {
+        const saved = localStorage.getItem('biolinks');
+        if (saved) {
+          links = JSON.parse(saved); // Restore array from JSON string
+        }
+      } catch (e) {
+        console.error('Failed to load from localStorage:', e);
+        links = [];
+      }
+    }
+
+
+    // ══════════════════════════════════════════════
+    // TASK 4: Save to localStorage
+    // JSON.stringify converts the array to a string for storage
+    // ══════════════════════════════════════════════
+    function saveToStorage() {
+      localStorage.setItem('biolinks', JSON.stringify(links));
+    }
+
+
+    // ══════════════════════════════════════════════
+    // TASK 2: URL Validation using regex
+    // URL must include https://
+    // ══════════════════════════════════════════════
+    function isValidURL(url) {
+      const regex = /^https:\/\/.+/;
+      return regex.test(url.trim());
+    }
+
+
+    // ══════════════════════════════════════════════
+    // TASK 1 + 2: Add Link — store as object {title, url}
+    // ══════════════════════════════════════════════
+    function addLink() {
+      const titleInput = document.getElementById('titleInput');
+      const urlInput   = document.getElementById('urlInput');
+      const urlError   = document.getElementById('urlError');
+
+      const title = titleInput.value.trim();
+      const url   = urlInput.value.trim();
+
+      // Reset error
+      urlError.style.display = 'none';
+      urlInput.style.borderColor = '#ccc';
+
+      // Validate empty fields
+      if (!title || !url) {
+        alert('Please fill in both Title and URL.');
+        return;
+      }
+
+      // TASK 2: Show red error if URL is invalid
+      if (!isValidURL(url)) {
+        urlError.style.display = 'block';        // Show red error message
+        urlInput.style.borderColor = 'red';
+        return;
+      }
+
+      // TASK 1: Store as object inside the array
+      const linkObject = { title: title, url: url };
+      links.push(linkObject);
+
+      // TASK 4: Save updated array to localStorage
+      saveToStorage();
+
+      // TASK 3: Re-render the links list
+      renderLinks();
+
+      // Clear inputs
+      titleInput.value = '';
+      urlInput.value   = '';
+    }
+
+
+    // ══════════════════════════════════════════════
+    // TASK 3: Dynamic Rendering using loop + template literals
+    // Each link renders as a clickable element (opens new tab)
+    // ══════════════════════════════════════════════
+    function renderLinks() {
+      const container = document.getElementById('linksList');
+
+      if (links.length === 0) {
+        container.innerHTML = '<p class="empty-msg">No links added yet.</p>';
+        return;
+      }
+
+      // Loop through array + template literals to build HTML
+      let html = '';
+      for (let i = 0; i < links.length; i++) {
+        html += `
+          <div class="link-entry" data-index="${i}">
+            <div>
+              <!-- TASK 3: Opens in new tab via target="_blank" -->
+              <a href="${links[i].url}" target="_blank" rel="noopener">
+                ${links[i].title}
+              </a>
+              <small>${links[i].url}</small>
+            </div>
+            <!-- TASK 5: Remove button with data-index for delegation -->
+            <button class="btn-remove" data-index="${i}">Remove</button>
+          </div>
+        `;
+      }
+      container.innerHTML = html;
+    }
+
+
+    // ══════════════════════════════════════════════
+    // TASK 5: Delete using Event Delegation
+    // One listener on the parent handles all Remove buttons,
+    // even ones added dynamically after page load.
+    // ══════════════════════════════════════════════
+    document.getElementById('linksList').addEventListener('click', function(e) {
+      if (e.target.classList.contains('btn-remove')) {
+        const index = parseInt(e.target.dataset.index);
+
+        links.splice(index, 1);   // Remove from array
+        saveToStorage();           // TASK 4: Sync localStorage
+        renderLinks();             // Update UI immediately
+      }
+    });
+
+
+    // ══════════════════════════════════════════════
+    // TASK 4: On page load — restore links from localStorage
+    // ══════════════════════════════════════════════
+    loadFromStorage();
+    renderLinks();
+
+  </script>
+
+</body>
+</html>
