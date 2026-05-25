@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loops in JavaScript</title>
+</head>
+<body>
+
+    <h1>JavaScript Loop Tasks</h1>
+
+    <script>
+
+        // Task 1: Print numbers from 1 to 10 using for loop
+
+        document.write("<h3>Numbers from 1 to 10</h3>");
+
+        for(let i = 1; i <= 10; i++) {
+            document.write(i + "<br>");
+        }
+
+
+        // Task 2: Sum of even numbers between 1 and 20 using while loop
+
+        let num = 1;
+        let sum = 0;
+
+        while(num <= 20) {
+
+            if(num % 2 == 0) {
+                sum = sum + num;
+            }
+
+            num++;
+        }
+
+        document.write("<h3>Sum of Even Numbers = " + sum + "</h3>");
+
+
+        // Task 3: do-while loop for number greater than 10
+
+        let number;
+
+        do {
+            number = prompt("Enter a number greater than 10:");
+        }
+        while(number <= 10);
+
+        document.write("<h3>You entered: " + number + "</h3>");
+
+    </script>
+
+</body>
+</html>

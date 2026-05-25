@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Try Catch Example</title>
+</head>
+<body>
+
+    <h1>JavaScript Error Handling</h1>
+
+    <script>
+
+        let number1 = 10;
+        let number2 = 0;
+
+        try {
+
+            if(number2 == 0){
+                throw "Error: Division by zero is not allowed";
+            }
+
+            let result = number1 / number2;
+
+            document.write("Result = " + result);
+
+        }
+
+        catch(error){
+
+            document.write("<h3>" + error + "</h3>");
+
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>setTimeout and setInterval</title>
+
+    <style>
+
+        body{
+            text-align: center;
+            margin-top: 100px;
+            font-family: Arial;
+        }
+
+        #clock{
+            font-size: 40px;
+            font-weight: bold;
+            color: darkblue;
+            border: 3px solid black;
+            display: inline-block;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: lightyellow;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>JavaScript Timing Functions</h1>
+
+    <h2>Background color will change after 5 seconds</h2>
+
+    <div id="clock"></div>
+
+    <script>
+
+        // Task 1: Change background color after 5 seconds
+
+        setTimeout(function(){
+
+            document.body.style.backgroundColor = "lightblue";
+
+        }, 5000);
+
+
+
+        // Task 2: Digital Clock using setInterval
+
+        function showTime(){
+
+            let time = new Date();
+
+            let hours = time.getHours();
+            let minutes = time.getMinutes();
+            let seconds = time.getSeconds();
+
+            let currentTime = hours + ":" + minutes + ":" + seconds;
+
+            document.getElementById("clock").innerHTML = currentTime;
+
+        }
+
+        setInterval(showTime, 1000);
+
+    </script>
+
+</body>
+</html>

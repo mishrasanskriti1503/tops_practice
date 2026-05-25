@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>If-Else and Switch Example</title>
+</head>
+<body>
+
+    <h1>JavaScript Program</h1>
+
+    <script>
+
+        // Task 1: Check Positive, Negative, or Zero
+
+        let number = prompt("Enter a number:");
+
+        if (number > 0) {
+            document.write("The number is Positive <br>");
+        }
+        else if (number < 0) {
+            document.write("The number is Negative <br>");
+        }
+        else {
+            document.write("The number is Zero <br>");
+        }
+
+
+        // Task 2: Display Day of the Week using Switch
+
+        let day = parseInt(prompt("Enter a number between 1 to 7:"));
+
+        switch(day) {
+            case 1:
+                document.write("Monday");
+                break;
+
+            case 2:
+                document.write("Tuesday");
+                break;
+
+            case 3:
+                document.write("Wednesday");
+                break;
+
+            case 4:
+                document.write("Thursday");
+                break;
+
+            case 5:
+                document.write("Friday");
+                break;
+
+            case 6:
+                document.write("Saturday");
+                break;
+
+            case 7:
+                document.write("Sunday");
+                break;
+
+            default:
+                document.write("Invalid Input");
+        }
+
+    </script>
+
+</body>
+</html>
