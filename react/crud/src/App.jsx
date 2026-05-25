@@ -1,10 +1,11 @@
 
 import './App.css'
+import Shortcut from './Shortcut'
 // import Myprops from './Myprops'
 // import Usercrud from './Usercrud'
 // import New from './New'
 // import Props from './Props'
-import Test from './Test'
+// import Test from './Test'
 
 function App() {
 
@@ -17,8 +18,9 @@ function App() {
     {/* <Usercrud/> */}
     {/* <New/> */}
     {/* <Props myname={Name} myage={Age}/> */}
-    <Test/>
+    {/* <Test/> */}
     {/* <Myprops myname={Name} myage={Age}/> */}
+    <Shortcut/>
     </>
   )
 }

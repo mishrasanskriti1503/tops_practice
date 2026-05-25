@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Search Bar - Product Finder</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔍 Product Finder</h1>
+            <p>Start typing to search our catalog</p>
+        </div>
+
+        <div class="search-wrapper">
+            <div class="search-container">
+                <div class="search-input-wrapper">
+                    <svg class="search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <input type="text" id="searchInput" placeholder="Search for electronics, clothing, books..."
+                        autocomplete="off">
+                    <button class="clear-btn" id="clearBtn">✕</button>
+                </div>
+                <div class="suggestions-container" id="suggestionsContainer"></div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3>How it works:</h3>
+            <ul>
+                <li>Real-time search as you type</li>
+                <li>Highlights matching text in results</li>
+                <li>Filters from JSON product database</li>
+                <li>Keyboard navigation (↑ ↓ Enter)</li>
+                <li>Similar to Amazon's search experience</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
