@@ -1,11 +1,13 @@
 
 import './App.css'
-import Shortcut from './Shortcut'
-// import Myprops from './Myprops'
-// import Usercrud from './Usercrud'
-// import New from './New'
-// import Props from './Props'
-// import Test from './Test'
+// import Shortcut from './Shortcut'
+//  import Myprops from './Myprops'
+//  import Usercrud from './Usercrud'
+//  import New from './New'
+//  import Props from './Props'
+//  import Test from './Test'
+import Test2 from './Test2'
+
 
 function App() {
 
@@ -20,7 +22,9 @@ function App() {
     {/* <Props myname={Name} myage={Age}/> */}
     {/* <Test/> */}
     {/* <Myprops myname={Name} myage={Age}/> */}
-    <Shortcut/>
+    {/* <Shortcut/> */}
+    <Test2/>
+    
     </>
   )
 }
